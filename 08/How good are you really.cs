@@ -6,7 +6,6 @@ public class Kata
 {
     public static bool BetterThanAverage(int[] classPoints, int myPoints)
     {
-        double average = classPoints.Sum() / (double)classPoints.Count();
-        return (myPoints - average) > 0;
+         return classPoints.Average() < myPoints;
     }
 }
