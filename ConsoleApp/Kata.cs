@@ -9,13 +9,13 @@ namespace ConsoleApp
     public class Kata
     {
         /// <summary>
-        /// https://www.codewars.com/kata/correct-the-mistakes-of-the-character-recognition-software/train/csharp
+        /// https://www.codewars.com/kata/reversing-words-in-a-string/train/csharp
         /// </summary>
         /// <param name="text"></param>
         /// <returns></returns>
-        public static string Correct(string text)
+        public static string Reverse(string text)
         {
-            return text.Replace("5", "S").Replace("1", "I").Replace("0", "O");
+            return string.Join(" ", text.Split(' ').Reverse());
         }
     }
 }
