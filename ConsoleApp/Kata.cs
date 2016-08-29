@@ -9,13 +9,14 @@ namespace ConsoleApp
     public class Kata
     {
         /// <summary>
-        /// https://www.codewars.com/kata/reversing-words-in-a-string/train/csharp
+        /// https://www.codewars.com/kata/grasshopper-summation/train/csharp
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="num"></param>
         /// <returns></returns>
-        public static string Reverse(string text)
+        public static int summation(int num)
         {
-            return string.Join(" ", text.Split(' ').Reverse());
+            int sum = (1 + num) * num / 2;
+            return sum;
         }
     }
 }
