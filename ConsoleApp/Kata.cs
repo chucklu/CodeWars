@@ -1,22 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace ConsoleApp
+/// <summary>
+/// https://www.codewars.com/kata/printing-array-elements-with-comma-delimiters/train/csharp
+/// </summary>
+public class Kata
 {
-    public class Kata
+    public static string PrintArray(object[] array)
     {
-        /// <summary>
-        /// https://www.codewars.com/kata/grasshopper-summation/train/csharp
-        /// </summary>
-        /// <param name="num"></param>
-        /// <returns></returns>
-        public static int summation(int num)
+        var list = new List<string>();
+        foreach (var item in array)
         {
-            int sum = (1 + num) * num / 2;
-            return sum;
+            var obj = item as object[];
+            if (obj == null)
+            {
+                list.Add(item.ToString());
+            }
+            else
+            {
+                string temp = PrintArray(obj);
+                list.Add(temp);
+            }
         }
+        return string.Join(",", list);
     }
 }
+
