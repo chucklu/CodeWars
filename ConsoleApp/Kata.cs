@@ -1,27 +1,34 @@
-﻿using System.Collections.Generic;
-
+﻿
 /// <summary>
-/// https://www.codewars.com/kata/printing-array-elements-with-comma-delimiters/train/csharp
+/// https://www.codewars.com/kata/heads-and-legs/train/csharp
 /// </summary>
 public class Kata
 {
-    public static string PrintArray(object[] array)
+    public static object Animals(int heads, int legs)
     {
-        var list = new List<string>();
-        foreach (var item in array)
+        if (heads == 0 && legs == 0)
         {
-            var obj = item as object[];
-            if (obj == null)
-            {
-                list.Add(item.ToString());
-            }
-            else
-            {
-                string temp = PrintArray(obj);
-                list.Add(temp);
-            }
+            return new[] { 0, 0 };
         }
-        return string.Join(",", list);
+        if (heads <= 0 || legs <= 0)
+        {
+            return "No solutions";
+        }
+        if (legs % 2 != 0)
+        {
+            return "No solutions";
+        }
+        var chickenCount = 2 * heads - legs / 2;
+        var rabbitCount = legs / 2 - heads;
+        if (chickenCount < 0)
+        {
+            return "No solutions";
+        }
+        if (rabbitCount < 0)
+        {
+            return "No solutions";
+        }
+        return new[] { chickenCount, rabbitCount };
     }
 }
 

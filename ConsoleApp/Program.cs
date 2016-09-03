@@ -8,25 +8,7 @@ namespace ConsoleApp
         {
             try
             {
-                object a1 = 1;
-                object b1 = 'a';
-                object c1 = "hello";
-
-
-                object a2 = 2;
-                object b2 = 'b';
-                object c2 = "world";
-
-
-                object a3 = 3;
-                object b3 = 'c';
-                object c3 = "love";
-
-                object[] array1 = {a1, b1, c1};
-                object[] array2 = {a2, b2, c2, array1};
-                object[] array3 = {a3, b3, c3, array2};
-                string str = Kata.PrintArray(array3);
-                Console.WriteLine(str);
+                object obj = Kata.Animals(44, 28);
             }
             catch (Exception ex)
             {
