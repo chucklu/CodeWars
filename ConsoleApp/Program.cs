@@ -8,7 +8,10 @@ namespace ConsoleApp
         {
             try
             {
-                object obj = Kata.Animals(44, 28);
+                string firstName = "James";
+                string lastName = "Stevens";
+                string result = Kata.CombineNames(firstName, lastName);
+                Console.WriteLine(result);
             }
             catch (Exception ex)
             {
