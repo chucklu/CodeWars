@@ -1,10 +1,13 @@
-﻿/// <summary>
-/// http://www.codewars.com/kata/grasshopper-combine-strings/train/csharp
+﻿using System;
+using System.Linq;
+
+/// <summary>
+/// http://www.codewars.com/kata/enumerable-magic-number-1-true-for-all/train/csharp
 /// </summary>
-public static class Kata
+public class Kata
 {
-    public static string CombineNames(string firstName,string lastName)
+    public static bool All(int[] arr, Func<int, bool> fun)
     {
-        return $"{firstName} {lastName}";
+        return !arr.Any(x => fun(x) == false);
     }
 }
