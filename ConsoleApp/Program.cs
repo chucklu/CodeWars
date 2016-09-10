@@ -8,9 +8,9 @@ namespace ConsoleApp
         {
             try
             {
-                string firstName = "James";
-                string lastName = "Stevens";
-                string result = Kata.CombineNames(firstName, lastName);
+                string result = string.Empty;
+                string[] array = new[] {"bitcoin", "take", "over", "the", "world", "maybe", "who", "knows", "perhaps"};
+                result = Kata.TwoSort(array);
                 Console.WriteLine(result);
             }
             catch (Exception ex)

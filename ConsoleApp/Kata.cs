@@ -2,12 +2,15 @@
 using System.Linq;
 
 /// <summary>
-/// http://www.codewars.com/kata/enumerable-magic-number-1-true-for-all/train/csharp
+/// http://www.codewars.com/kata/sort-and-star/train/csharp
 /// </summary>
 public class Kata
 {
-    public static bool All(int[] arr, Func<int, bool> fun)
+    public static string TwoSort(string[] s)
     {
-        return !arr.Any(x => fun(x) == false);
+        Array.Sort(s, StringComparer.Ordinal);
+        string temp = s.First();
+        string result = string.Join("***", temp.Select(x => x));
+        return result;
     }
 }
