@@ -8,10 +8,12 @@ namespace ConsoleApp
         {
             try
             {
-                string result = string.Empty;
-                string[] array = new[] {"bitcoin", "take", "over", "the", "world", "maybe", "who", "knows", "perhaps"};
-                result = Kata.TwoSort(array);
-                Console.WriteLine(result);
+                var array = new object[] {118, 117, 120, 121, 117, 98, 122, 97, 120, 106, 104, 116, 113, 114, 113, 120, 106};
+                var list = Kata.IsVow(array);
+                foreach (var item in list)
+                {
+                    Console.WriteLine(item);
+                }
             }
             catch (Exception ex)
             {

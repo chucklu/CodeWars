@@ -1,16 +1,22 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 
 /// <summary>
-/// http://www.codewars.com/kata/sort-and-star/train/csharp
+/// http://www.codewars.com/kata/is-there-a-vowel-in-there/train/csharp
 /// </summary>
 public class Kata
 {
-    public static string TwoSort(string[] s)
+    public static int[] vowels = { 'a', 'e', 'i', 'o', 'u' };
+
+    public static object[] IsVow(object[] a)
     {
-        Array.Sort(s, StringComparer.Ordinal);
-        string temp = s.First();
-        string result = string.Join("***", temp.Select(x => x));
-        return result;
+        for (int i = 0; i < a.Length; i++)
+        {
+            int value = (int)a[i];
+            if (vowels.Contains(value))
+            {
+                a[i] = ((char)value).ToString();
+            }
+        }
+        return a;
     }
 }
