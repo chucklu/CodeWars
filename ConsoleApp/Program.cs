@@ -8,12 +8,9 @@ namespace ConsoleApp
         {
             try
             {
-                var array = new object[] {118, 117, 120, 121, 117, 98, 122, 97, 120, 106, 104, 116, 113, 114, 113, 120, 106};
-                var list = Kata.IsVow(array);
-                foreach (var item in list)
-                {
-                    Console.WriteLine(item);
-                }
+                var array = new int[] {1, 2, 3, 4, 5};
+                bool flag = Kata.None(array, v => v > 4);
+                Console.WriteLine(flag);
             }
             catch (Exception ex)
             {

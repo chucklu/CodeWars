@@ -1,22 +1,13 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 
 /// <summary>
-/// http://www.codewars.com/kata/is-there-a-vowel-in-there/train/csharp
+/// https://www.codewars.com/kata/enumerable-magic-number-4-true-for-none/train/csharp
 /// </summary>
 public class Kata
 {
-    public static int[] vowels = { 'a', 'e', 'i', 'o', 'u' };
-
-    public static object[] IsVow(object[] a)
+    public static bool None(int[] arr, Func<int, bool> fun)
     {
-        for (int i = 0; i < a.Length; i++)
-        {
-            int value = (int)a[i];
-            if (vowels.Contains(value))
-            {
-                a[i] = ((char)value).ToString();
-            }
-        }
-        return a;
+        return !arr.Any(fun);
     }
 }
