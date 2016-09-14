@@ -1,13 +1,16 @@
 ﻿using System;
-using System.Linq;
 
 /// <summary>
-/// https://www.codewars.com/kata/enumerable-magic-number-4-true-for-none/train/csharp
+/// https://www.codewars.com/kata/string-templates-bug-fixing-number-5/train/csharp
 /// </summary>
-public class Kata
+public static class Kata
 {
-    public static bool None(int[] arr, Func<int, bool> fun)
+    public static string buildString(string[] args)
     {
-        return !arr.Any(fun);
+        foreach (string s in args)
+        {
+            Console.WriteLine($"s = {s},Length = {s.Length}");
+        }
+        return string.Format("I like {0}!", string.Join(", ", args));
     }
 }

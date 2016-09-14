@@ -8,9 +8,9 @@ namespace ConsoleApp
         {
             try
             {
-                var array = new int[] {1, 2, 3, 4, 5};
-                bool flag = Kata.None(array, v => v > 4);
-                Console.WriteLine(flag);
+                string[] array = new[] {"Cheese", "Milk", "Chocolate"};
+                string str = Kata.buildString(array);
+                Console.WriteLine(str);
             }
             catch (Exception ex)
             {
