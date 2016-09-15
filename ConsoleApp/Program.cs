@@ -8,9 +8,10 @@ namespace ConsoleApp
         {
             try
             {
-                string[] array = new[] {"Cheese", "Milk", "Chocolate"};
-                string str = Kata.buildString(array);
-                Console.WriteLine(str);
+                int[] array = new[] {1, 3, 5};
+                int number = 2;
+                bool flag = Kata.Include(array, number);
+                Console.WriteLine(flag);
             }
             catch (Exception ex)
             {

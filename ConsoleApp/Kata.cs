@@ -1,16 +1,12 @@
-﻿using System;
+﻿using System.Linq;
 
 /// <summary>
-/// https://www.codewars.com/kata/string-templates-bug-fixing-number-5/train/csharp
+/// https://www.codewars.com/kata/enumerable-magic-number-3-does-my-list-include-this/train/csharp
 /// </summary>
-public static class Kata
+public class Kata
 {
-    public static string buildString(string[] args)
+    public static bool Include(int[] arr, int item)
     {
-        foreach (string s in args)
-        {
-            Console.WriteLine($"s = {s},Length = {s.Length}");
-        }
-        return string.Format("I like {0}!", string.Join(", ", args));
+        return arr.Contains(item);
     }
 }
