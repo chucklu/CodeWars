@@ -1,12 +1,13 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 
 /// <summary>
-/// https://www.codewars.com/kata/enumerable-magic-number-3-does-my-list-include-this/train/csharp
+/// https://www.codewars.com/kata/enumerable-magic-number-2-true-for-any/train/csharp
 /// </summary>
 public class Kata
 {
-    public static bool Include(int[] arr, int item)
+    public static bool Any(int[] arr, Func<int, bool> fun)
     {
-        return arr.Contains(item);
+        return arr.Any(fun);
     }
 }

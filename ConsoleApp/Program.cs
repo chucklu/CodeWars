@@ -9,8 +9,7 @@ namespace ConsoleApp
             try
             {
                 int[] array = new[] {1, 3, 5};
-                int number = 2;
-                bool flag = Kata.Include(array, number);
+                bool flag = Kata.Any(array, v => v > 4);
                 Console.WriteLine(flag);
             }
             catch (Exception ex)
