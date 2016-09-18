@@ -1,13 +1,21 @@
 ﻿using System;
-using System.Linq;
 
 /// <summary>
-/// https://www.codewars.com/kata/enumerable-magic-number-2-true-for-any/train/csharp
+/// https://www.codewars.com/kata/compare-within-margin/train/csharp
 /// </summary>
 public class Kata
 {
-    public static bool Any(int[] arr, Func<int, bool> fun)
+    public static int CloseCompare(double a, double b, double margin = 0)
     {
-        return arr.Any(fun);
+        double c = Math.Abs(a - b);
+        if (c <= margin)
+        {
+            return 0;
+        }
+        if (a < b)
+        {
+            return -1;
+        }
+        return 1;
     }
 }
