@@ -1,21 +1,14 @@
-﻿using System;
-
-/// <summary>
-/// https://www.codewars.com/kata/compare-within-margin/train/csharp
+﻿/// <summary>
+/// https://www.codewars.com/kata/grasshopper-personalized-message/train/csharp
 /// </summary>
 public class Kata
 {
-    public static int CloseCompare(double a, double b, double margin = 0)
+    public static string Greet(string name, string owner)
     {
-        double c = Math.Abs(a - b);
-        if (c <= margin)
+        if (name.Equals(owner))
         {
-            return 0;
+            return "Hello boss";
         }
-        if (a < b)
-        {
-            return -1;
-        }
-        return 1;
+        return "Hello guest";
     }
 }

@@ -8,7 +8,9 @@ namespace ConsoleApp
         {
             try
             {
-                int result = Kata.CloseCompare(3, 5, 3);
+                string name = "chucklu";
+                string owner = "chucklu";
+                string result = Kata.Greet(name, owner);
                 Console.WriteLine(result);
             }
             catch (Exception ex)
