@@ -1,14 +1,21 @@
 ﻿/// <summary>
-/// https://www.codewars.com/kata/grasshopper-personalized-message/train/csharp
+/// https://www.codewars.com/kata/swap-values/train/csharp
 /// </summary>
-public class Kata
+public class Swapper
 {
-    public static string Greet(string name, string owner)
+    public object[] Arguments { get; private set; }
+
+    public Swapper(object[] args)
     {
-        if (name.Equals(owner))
-        {
-            return "Hello boss";
-        }
-        return "Hello guest";
+        Arguments = args;
+    }
+
+    public void SwapValues()
+    {
+        object[] args = new[] { Arguments[0], Arguments[1] };
+
+        object temp = args[0];
+        Arguments[0] = args[1];
+        Arguments[1] = temp;
     }
 }

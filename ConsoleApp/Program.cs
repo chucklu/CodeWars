@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace ConsoleApp
 {
@@ -8,10 +9,11 @@ namespace ConsoleApp
         {
             try
             {
-                string name = "chucklu";
-                string owner = "chucklu";
-                string result = Kata.Greet(name, owner);
-                Console.WriteLine(result);
+                int[] args = new[] { 1, 2 };
+
+                Swapper swapper = new Swapper(args.Cast<object>().ToArray());
+                swapper.SwapValues();
+                Console.WriteLine($"{swapper.Arguments[0]}  {swapper.Arguments[1]}");
             }
             catch (Exception ex)
             {
