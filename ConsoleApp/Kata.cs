@@ -1,21 +1,9 @@
 ﻿/// <summary>
-/// https://www.codewars.com/kata/swap-values/train/csharp
+/// https://www.codewars.com/kata/grasshopper-variable-assignment-debug/train/csharp
 /// </summary>
-public class Swapper
+public static class Kata
 {
-    public object[] Arguments { get; private set; }
-
-    public Swapper(object[] args)
-    {
-        Arguments = args;
-    }
-
-    public void SwapValues()
-    {
-        object[] args = new[] { Arguments[0], Arguments[1] };
-
-        object temp = args[0];
-        Arguments[0] = args[1];
-        Arguments[1] = temp;
-    }
+    public static string a { get; } = "dev";
+    public static string b { get; } = "Lab";
+    public static string name { get; } = a + b;
 }

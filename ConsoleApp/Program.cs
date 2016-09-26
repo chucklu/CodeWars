@@ -9,11 +9,7 @@ namespace ConsoleApp
         {
             try
             {
-                int[] args = new[] { 1, 2 };
-
-                Swapper swapper = new Swapper(args.Cast<object>().ToArray());
-                swapper.SwapValues();
-                Console.WriteLine($"{swapper.Arguments[0]}  {swapper.Arguments[1]}");
+                Console.WriteLine($"{Kata.a} {Kata.b} {Kata.name}");
             }
             catch (Exception ex)
             {
