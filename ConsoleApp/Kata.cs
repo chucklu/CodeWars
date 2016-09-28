@@ -1,9 +1,17 @@
 ﻿/// <summary>
-/// https://www.codewars.com/kata/grasshopper-variable-assignment-debug/train/csharp
+/// https://www.codewars.com/kata/determine-offspring-sex-based-on-genes-xx-and-xy-chromosomes/train/csharp
 /// </summary>
-public static class Kata
+public class Kata
 {
-    public static string a { get; } = "dev";
-    public static string b { get; } = "Lab";
-    public static string name { get; } = a + b;
+    public static string ChromosomeCheck(string sperm)
+    {
+        if (sperm.Contains("Y"))
+        {
+            return "Congratulations! You're going to have a son.";
+        }
+        else
+        {
+            return "Congratulations! You're going to have a daughter.";
+        }
+    }
 }

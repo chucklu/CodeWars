@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 
 namespace ConsoleApp
 {
@@ -9,7 +8,8 @@ namespace ConsoleApp
         {
             try
             {
-                Console.WriteLine($"{Kata.a} {Kata.b} {Kata.name}");
+                string s = Kata.ChromosomeCheck("XY");
+                Console.WriteLine(s);
             }
             catch (Exception ex)
             {
