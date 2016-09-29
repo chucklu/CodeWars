@@ -1,17 +1,21 @@
-﻿/// <summary>
-/// https://www.codewars.com/kata/determine-offspring-sex-based-on-genes-xx-and-xy-chromosomes/train/csharp
+﻿using System.Linq;
+
+/// <summary>
+/// https://www.codewars.com/kata/fake-binary/train/csharp
 /// </summary>
 public class Kata
 {
-    public static string ChromosomeCheck(string sperm)
+    public static string FakeBin(string x)
     {
-        if (sperm.Contains("Y"))
+        return string.Join(string.Empty, x.Select(Fun));
+    }
+
+    public static char Fun(char c)
+    {
+        if (c < '5')
         {
-            return "Congratulations! You're going to have a son.";
+            return '0';
         }
-        else
-        {
-            return "Congratulations! You're going to have a daughter.";
-        }
+        return '1';
     }
 }
