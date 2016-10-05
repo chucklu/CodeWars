@@ -1,21 +1,15 @@
 ﻿using System.Linq;
 
-/// <summary>
-/// https://www.codewars.com/kata/fake-binary/train/csharp
-/// </summary>
-public class Kata
+namespace Solution
 {
-    public static string FakeBin(string x)
+    /// <summary>
+    /// https://www.codewars.com/kata/string-repeat/train/csharp
+    /// </summary>
+    public static class Program
     {
-        return string.Join(string.Empty, x.Select(Fun));
-    }
-
-    public static char Fun(char c)
-    {
-        if (c < '5')
+        public static string repeatStr(int n, string s)
         {
-            return '0';
+            return string.Join(string.Empty, Enumerable.Repeat(s, n));
         }
-        return '1';
     }
 }
