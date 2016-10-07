@@ -1,15 +1,15 @@
-﻿using System.Linq;
+﻿using System;
 
 namespace Solution
 {
     /// <summary>
-    /// https://www.codewars.com/kata/string-repeat/train/csharp
+    /// https://www.codewars.com/kata/bin-to-decimal/train/csharp
     /// </summary>
     public static class Program
     {
-        public static string repeatStr(int n, string s)
+        public static int binToDec(string s)
         {
-            return string.Join(string.Empty, Enumerable.Repeat(s, n));
+            return Convert.ToInt32(s, 2);
         }
     }
 }
