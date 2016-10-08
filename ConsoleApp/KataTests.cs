@@ -1,18 +1,14 @@
 ﻿using NUnit.Framework;
 
-namespace Solution
+[TestFixture]
+public class KataTests
 {
-    [TestFixture]
-    public class KataTests
+    [Test]
+    public void BasicTests()
     {
-        [Test]
-        public void BasicTests()
-        {
-            Assert.AreEqual(0, Program.binToDec("0"));
-            Assert.AreEqual(1, Program.binToDec("1"));
-            Assert.AreEqual(2, Program.binToDec("10"));
-            Assert.AreEqual(3, Program.binToDec("11"));
-            Assert.AreEqual(6, Program.binToDec("110"));
-        }
+        Assert.AreEqual(new[] { 2, 4, 6 }, Kata.Maps(new[] { 1, 2, 3 }));
+        Assert.AreEqual(new[] { 8, 2, 2, 2, 8 }, Kata.Maps(new[] { 4, 1, 1, 1, 4 }));
+        Assert.AreEqual(new[] { 4, 4, 4, 4, 4, 4 }, Kata.Maps(new[] { 2, 2, 2, 2, 2, 2 }));
     }
 }
+

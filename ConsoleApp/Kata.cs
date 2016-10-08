@@ -1,15 +1,12 @@
-﻿using System;
+﻿using System.Linq;
 
-namespace Solution
+/// <summary>
+/// https://www.codewars.com/kata/beginner-lost-without-a-map/train/csharp
+/// </summary>
+public class Kata
 {
-    /// <summary>
-    /// https://www.codewars.com/kata/bin-to-decimal/train/csharp
-    /// </summary>
-    public static class Program
+    public static int[] Maps(int[] x)
     {
-        public static int binToDec(string s)
-        {
-            return Convert.ToInt32(s, 2);
-        }
+        return x.Select(y => 2 * y).ToArray();
     }
 }
