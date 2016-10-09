@@ -1,12 +1,12 @@
 ﻿using System.Linq;
 
 /// <summary>
-/// https://www.codewars.com/kata/beginner-lost-without-a-map/train/csharp
+/// https://www.codewars.com/kata/pre-fizzbuzz-workout-number-1/train/csharp
 /// </summary>
 public class Kata
 {
-    public static int[] Maps(int[] x)
+    public static int[] PreFizz(int n)
     {
-        return x.Select(y => 2 * y).ToArray();
+        return Enumerable.Range(1, n).Select(x => x).ToArray();
     }
 }
