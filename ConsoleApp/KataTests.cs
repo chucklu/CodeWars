@@ -6,11 +6,17 @@ public class KataTests
     [Test]
     public void BasicTests()
     {
-        Assert.AreEqual(new int[] { 1 }, Kata.PreFizz(1), "Array should be from 1 to 1");
-        Assert.AreEqual(new int[] { 1, 2 }, Kata.PreFizz(2), "Array should be from 1 to 2");
-        Assert.AreEqual(new int[] { 1, 2, 3 }, Kata.PreFizz(3), "Array should be from 1 to 3");
-        Assert.AreEqual(new int[] { 1, 2, 3, 4 }, Kata.PreFizz(4), "Array should be from 1 to 4");
-        Assert.AreEqual(new int[] { 1, 2, 3, 4, 5 }, Kata.PreFizz(5), "Array should be from 1 to 5");
+        var input = new int[] { 4, 3, 9, 7, 2, 1 };
+        var expected = new int[] { 2, 9, 3, 49, 4, 1 };
+        Assert.AreEqual(string.Join(",", expected), string.Join(",", Kata.SquareOrSquareRoot(input)));
+
+        input = new int[] { 100, 101, 5, 5, 1, 1 };
+        expected = new int[] { 10, 10201, 25, 25, 1, 1 };
+        Assert.AreEqual(string.Join(",", expected), string.Join(",", Kata.SquareOrSquareRoot(input)));
+
+        input = new int[] { 1, 2, 3, 4, 5, 6 };
+        expected = new int[] { 1, 4, 9, 2, 25, 36 };
+        Assert.AreEqual(string.Join(",", expected), string.Join(",", Kata.SquareOrSquareRoot(input)));
     }
 }
 
