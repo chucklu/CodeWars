@@ -1,12 +1,23 @@
-﻿using System.Linq;
-
-/// <summary>
-/// https://www.codewars.com/kata/beginner-reduce-but-grow/train/csharp
+﻿/// <summary>
+/// https://www.codewars.com/kata/uefa-euro-2016/train/csharp
 /// </summary>
 public class Kata
 {
-    public static int Grow(int[] x)
+    public static string UefaEuro2016(string[] teams, int[] scores)
     {
-        return x.Aggregate(1, (current, item) => current * item);
+        string str;
+        if (scores[0] > scores[1])
+        {
+            str = $"At match {teams[0]} - {teams[1]}, {teams[0]} won!";
+        }
+        else if (scores[0] == scores[1])
+        {
+            str = $"At match {teams[0]} - {teams[1]}, teams played draw.";
+        }
+        else
+        {
+            str = $"At match {teams[0]} - {teams[1]}, {teams[1]} won!";
+        }
+        return str;
     }
 }
