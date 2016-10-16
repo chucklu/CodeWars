@@ -1,23 +1,29 @@
-﻿/// <summary>
-/// https://www.codewars.com/kata/uefa-euro-2016/train/csharp
+﻿using System;
+using System.Linq;
+
+/// <summary>
+/// https://www.codewars.com/kata/even-or-odd-which-is-greater/train/csharp
 /// </summary>
-public class Kata
+public class EvenOrOddKata
 {
-    public static string UefaEuro2016(string[] teams, int[] scores)
+    public static string EvenOrOdd(string str)
     {
-        string str;
-        if (scores[0] > scores[1])
+        string result;
+        var numbers = str.Select(x => x - '0').ToList();
+        int odd = numbers.Where(x => x % 2 == 1).Sum();
+        int even = numbers.Where(x => x % 2 == 0).Sum();
+        if (odd > even)
         {
-            str = $"At match {teams[0]} - {teams[1]}, {teams[0]} won!";
+            result = "Odd is greater than Even";
         }
-        else if (scores[0] == scores[1])
+        else if (odd == even)
         {
-            str = $"At match {teams[0]} - {teams[1]}, teams played draw.";
+            result = "Even and Odd are the same";
         }
         else
         {
-            str = $"At match {teams[0]} - {teams[1]}, {teams[1]} won!";
+            result = "Even is greater than Odd";
         }
-        return str;
+        return result;
     }
 }
