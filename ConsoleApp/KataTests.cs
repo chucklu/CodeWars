@@ -3,12 +3,11 @@
 [TestFixture]
 public class KataTests
 {
-    [TestCase("123", "Odd is greater than Even")]
-    [TestCase("12", "Even is greater than Odd")]
-    [TestCase("112", "Even and Odd are the same")]
-    public void BasicTests(string input, string expectedResult)
+    [Test]
+    [TestCase(2, 10, 2, ExpectedResult = new int[] { 2, 4, 6, 8, 10 })]
+    public static int[] FixedTest(int min, int max, int step)
     {
-        Assert.AreEqual(expectedResult, EvenOrOddKata.EvenOrOdd(input));
+        return Kata.GenerateRange(min, max, step);
     }
 }
 
