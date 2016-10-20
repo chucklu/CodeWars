@@ -1,17 +1,11 @@
-﻿using System.Collections.Generic;
-
-/// <summary>
-/// https://www.codewars.com/kata/generate-range-of-integers/train/csharp
+﻿/// <summary>
+/// https://www.codewars.com/kata/find-the-position/train/csharp
 /// </summary>
 public class Kata
 {
-    public static int[] GenerateRange(int min, int max, int step)
+    public static string Position(char alphabet)
     {
-        List<int> list = new List<int>();
-        for (int i = min; i <= max; i = i + step)
-        {
-            list.Add(i);
-        }
-        return list.ToArray();
+        int number = alphabet - 'a' + 1;
+        return $@"Position of alphabet: {number}";
     }
 }
