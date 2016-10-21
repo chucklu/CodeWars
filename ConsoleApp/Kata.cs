@@ -1,11 +1,15 @@
-﻿/// <summary>
-/// https://www.codewars.com/kata/find-the-position/train/csharp
+﻿using System.Collections.Generic;
+
+/// <summary>
+/// https://www.codewars.com/kata/switch-it-up/train/csharp
 /// </summary>
 public class Kata
 {
-    public static string Position(char alphabet)
+    private static readonly List<string> list =
+        new List<string> { "Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine" };
+
+    public static string SwitchItUp(int number)
     {
-        int number = alphabet - 'a' + 1;
-        return $@"Position of alphabet: {number}";
+        return list[number];
     }
 }

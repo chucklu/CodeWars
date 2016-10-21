@@ -6,9 +6,9 @@ public class KataTests
     [Test]
     public void BasicTests()
     {
-        Assert.AreEqual("Position of alphabet: 1", Kata.Position('a'));
-        Assert.AreEqual("Position of alphabet: 26", Kata.Position('z'));
-        Assert.AreEqual("Position of alphabet: 5", Kata.Position('e'));
+        Assert.AreEqual("One", Kata.SwitchItUp(1));
+        Assert.AreEqual("Three", Kata.SwitchItUp(3));
+        Assert.AreEqual("Five", Kata.SwitchItUp(5));
     }
 }
 
