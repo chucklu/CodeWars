@@ -1,15 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System.Linq;
 
 /// <summary>
-/// https://www.codewars.com/kata/switch-it-up/train/csharp
+/// https://www.codewars.com/kata/remove-duplicates-from-list/train/csharp
 /// </summary>
-public class Kata
+public static class Kata
 {
-    private static readonly List<string> list =
-        new List<string> { "Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine" };
-
-    public static string SwitchItUp(int number)
+    public static int[] distinct(int[] a)
     {
-        return list[number];
+        return  a.Distinct().ToArray();
     }
 }

@@ -6,9 +6,9 @@ public class KataTests
     [Test]
     public void BasicTests()
     {
-        Assert.AreEqual("One", Kata.SwitchItUp(1));
-        Assert.AreEqual("Three", Kata.SwitchItUp(3));
-        Assert.AreEqual("Five", Kata.SwitchItUp(5));
+        Assert.AreEqual(new int[] { 1 }, Kata.distinct(new int[] { 1 }));
+        Assert.AreEqual(new int[] { 1, 2 }, Kata.distinct(new int[] { 1, 2 }));
+        Assert.AreEqual(new int[] { 1, 2 }, Kata.distinct(new int[] { 1, 1, 2 }));
     }
 }
 
