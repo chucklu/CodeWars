@@ -1,12 +1,26 @@
-﻿using System.Linq;
-
-/// <summary>
-/// https://www.codewars.com/kata/remove-duplicates-from-list/train/csharp
+﻿/// <summary>
+/// https://www.codewars.com/kata/basic-mathematical-operations/train/csharp
 /// </summary>
 public static class Kata
 {
-    public static int[] distinct(int[] a)
+    public static double basicOp(char op, double val1, double val2)
     {
-        return  a.Distinct().ToArray();
+        double result = 0;
+        switch (op)
+        {
+            case '+':
+                result = val1 + val2;
+                break;
+            case '-':
+                result = val1 - val2;
+                break;
+            case '*':
+                result = val1 * val2;
+                break;
+            case '/':
+                result = val1 / val2;
+                break;
+        }
+        return result;
     }
 }
