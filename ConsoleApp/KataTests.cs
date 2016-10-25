@@ -6,10 +6,9 @@ public class KataTests
     [Test]
     public void BasicTests()
     {
-        Assert.AreEqual(Kata.basicOp('+', 4, 7), 11);
-        Assert.AreEqual(Kata.basicOp('-', 15, 18), -3);
-        Assert.AreEqual(Kata.basicOp('*', 5, 5), 25);
-        Assert.AreEqual(Kata.basicOp('/', 49, 7), 7);
+        Assert.AreEqual("yes, ascending", Kata.IsSortedAndHow(new[] { 1, 2 }));
+        Assert.AreEqual("yes, descending", Kata.IsSortedAndHow(new[] { 15, 7, 3, -8 }));
+        Assert.AreEqual("no", Kata.IsSortedAndHow(new[] { 4, 2, 30 }));
     }
 }
 

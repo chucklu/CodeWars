@@ -1,25 +1,26 @@
-﻿/// <summary>
-/// https://www.codewars.com/kata/basic-mathematical-operations/train/csharp
+﻿using System.Linq;
+
+/// <summary>
+/// https://www.codewars.com/kata/sorted-yes-no-how/train/csharp
 /// </summary>
-public static class Kata
+public class Kata
 {
-    public static double basicOp(char op, double val1, double val2)
+    public static string IsSortedAndHow(int[] array)
     {
-        double result = 0;
-        switch (op)
+        string result;
+        var array1 = array.OrderBy(x => x).ToArray();
+        var array2 = array.OrderByDescending(x => x).ToArray();
+        if (array.SequenceEqual(array1))
         {
-            case '+':
-                result = val1 + val2;
-                break;
-            case '-':
-                result = val1 - val2;
-                break;
-            case '*':
-                result = val1 * val2;
-                break;
-            case '/':
-                result = val1 / val2;
-                break;
+            result = "yes, ascending";
+        }
+        else if (array.SequenceEqual(array2))
+        {
+            result = "yes, descending";
+        }
+        else
+        {
+            result = "no";
         }
         return result;
     }
