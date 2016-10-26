@@ -6,9 +6,9 @@ public class KataTests
     [Test]
     public void BasicTests()
     {
-        Assert.AreEqual("yes, ascending", Kata.IsSortedAndHow(new[] { 1, 2 }));
-        Assert.AreEqual("yes, descending", Kata.IsSortedAndHow(new[] { 15, 7, 3, -8 }));
-        Assert.AreEqual("no", Kata.IsSortedAndHow(new[] { 4, 2, 30 }));
+        Assert.AreEqual(1, Kata.getNumberFromString("1"));
+        Assert.AreEqual(123, Kata.getNumberFromString("123"));
+        Assert.AreEqual(7, Kata.getNumberFromString("this is number: 7"));
     }
 }
 
