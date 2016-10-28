@@ -4,33 +4,10 @@
 public class KataTests
 {
     [Test]
-    public void ExampleTest1()
+    public void ExampleTests()
     {
-        string expected = "codewars";
-
-        string actual = Kata.Switcher(new string[] { "24", "12", "23", "22", "4", "26", "9", "8" });
-
-        Assert.AreEqual(expected, actual);
-    }
-
-    [Test]
-    public void ExampleTest2()
-    {
-        string expected = "btswmdsbd kkw";
-
-        string actual = Kata.Switcher(new string[] { "25", "7", "8", "4", "14", "23", "8", "25", "23", "29", "16", "16", "4" });
-
-        Assert.AreEqual(expected, actual);
-    }
-
-    [Test]
-    public void ExampleTest3()
-    {
-        string expected = "wc";
-
-        string actual = Kata.Switcher(new string[] { "4", "24" });
-
-        Assert.AreEqual(expected, actual);
+        Assert.AreEqual(8, Kata.DontGiveMeFive(1, 9));
+        Assert.AreEqual(12, Kata.DontGiveMeFive(4, 17));
     }
 }
 
