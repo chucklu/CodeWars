@@ -1,19 +1,14 @@
-﻿/// <summary>
-/// https://www.codewars.com/kata/dont-give-me-five/train/csharp
+﻿using System;
+using System.Linq;
+
+/// <summary>
+/// https://www.codewars.com/kata/average-scores/train/csharp
 /// </summary>
 public class Kata
 {
-    public static int DontGiveMeFive(int start, int end)
+    public static int Average(int[] scores)
     {
-        int count = 0;
-        for (int i = start; i <= end; i++)
-        {
-            var s = i.ToString();
-            if (s.Contains("5") == false)
-            {
-                count++;
-            }
-        }
-        return count;
+        double average = scores.Average();
+        return Convert.ToInt32(Math.Round(average, MidpointRounding.AwayFromZero));
     }
 }

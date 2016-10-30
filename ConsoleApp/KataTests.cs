@@ -6,8 +6,11 @@ public class KataTests
     [Test]
     public void ExampleTests()
     {
-        Assert.AreEqual(8, Kata.DontGiveMeFive(1, 9));
-        Assert.AreEqual(12, Kata.DontGiveMeFive(4, 17));
+        var scores = new int[] { 49, 3, 5, 300, 7 };
+        Assert.AreEqual(73, Kata.Average(scores));
+
+        scores = new int[] { 90, 98, 89, 100, 100, 86, 94 };
+        Assert.AreEqual(94, Kata.Average(scores));
     }
 }
 
