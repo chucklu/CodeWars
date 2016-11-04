@@ -1,12 +1,18 @@
 ﻿using System.Linq;
 
 /// <summary>
-/// https://www.codewars.com/kata/sum-of-all-the-multiples-of-3-or-5/train/csharp
+/// https://www.codewars.com/kata/complete-series/train/csharp
 /// </summary>
 public class Kata
 {
-    public static int findSum(int n)
+    public static int[] CompleteSeries(int[] arr)
     {
-        return Enumerable.Range(3, n - 3 + 1).Where(x => x % 3 == 0 || x % 5 == 0).Aggregate(0, (current, item) => current + item);
+        int count = arr.GroupBy(x => x).Count();
+        if (arr.Length > count)
+        {
+            return new[] { 0 };
+        }
+        int max = arr.Max();
+        return Enumerable.Range(0, max + 1).ToArray();
     }
 }
