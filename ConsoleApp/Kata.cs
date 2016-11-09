@@ -1,25 +1,21 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 
 /// <summary>
-/// https://www.codewars.com/kata/equalize-the-array/train/csharp
+/// https://www.codewars.com/kata/zip-it/train/csharp
 /// </summary>
 public static class Kata
 {
-    public static string[] Equalize(int[] array)
+    public static object[] ZipIt(this object[] a, object[] b, Func<object, object, object> fn)
     {
-        if (array.Length == 0)
+        if (a.Length > b.Length)
         {
-            return new string[] { };
+            a = a.Take(b.Length).ToArray();
         }
-        return array.Select(x => Convert(x - array[0])).ToArray();
-    }
-
-    private static string Convert(int n)
-    {
-        if (n < 0)
+        else if (a.Length < b.Length)
         {
-            return $"{n}";
+            b = b.Take(a.Length).ToArray();
         }
-        return $"+{n}";
+        return a.Select((t, i) => fn(t, b[i])).ToArray();
     }
 }
