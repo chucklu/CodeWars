@@ -1,21 +1,22 @@
-﻿using System;
-using System.Linq;
+﻿using System.Collections.Generic;
 
 /// <summary>
-/// https://www.codewars.com/kata/zip-it/train/csharp
+/// https://www.codewars.com/kata/averages-of-numbers/train/csharp
 /// </summary>
-public static class Kata
+public class Kata
 {
-    public static object[] ZipIt(this object[] a, object[] b, Func<object, object, object> fn)
+    public static double[] Averages(int[] numbers)
     {
-        if (a.Length > b.Length)
+        if (numbers == null || numbers.Length <= 1)
         {
-            a = a.Take(b.Length).ToArray();
+            return new double[] { };
         }
-        else if (a.Length < b.Length)
+        var list = new List<double>();
+        for (int i = 1; i < numbers.Length; i++)
         {
-            b = b.Take(a.Length).ToArray();
+            var temp = numbers[i - 1] + numbers[i];
+            list.Add(temp/2.0);
         }
-        return a.Select((t, i) => fn(t, b[i])).ToArray();
+        return list.ToArray();
     }
 }
