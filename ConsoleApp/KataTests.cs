@@ -3,11 +3,24 @@
 [TestFixture]
 public class KataTests
 {
+    private Kata kata = new Kata();
+
     [Test]
-    public void BasicTests()
+    public void _0_ShouldReturn10ForNumbersFrom10To14()
     {
-        Assert.AreEqual(4, Kata.getVolumeOfCubiod(1, 2, 2));
-        Assert.AreEqual(63, Kata.getVolumeOfCubiod(6.3, 2, 5));
+        for (int i = 10; i <= 14; ++i)
+        {
+            Assert.AreEqual(10, kata.ClosestMultiple10(i));
+        }
+    }
+
+    [Test]
+    public void _1_ShouldReturn20ForNumbersFrom15To20()
+    {
+        for (int i = 15; i <= 20; ++i)
+        {
+            Assert.AreEqual(20, kata.ClosestMultiple10(i));
+        }
     }
 }
 

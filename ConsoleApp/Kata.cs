@@ -1,10 +1,19 @@
 ﻿/// <summary>
-/// https://www.codewars.com/kata/volume-of-a-cuboid/train/csharp
+/// https://www.codewars.com/kata/return-the-closest-number-multiple-of-10/train/csharp
 /// </summary>
 public class Kata
 {
-    public static double getVolumeOfCubiod(double length, double width, double height)
+    public int ClosestMultiple10(int num)
     {
-        return length * width * height;
+        int n = num % 10;
+        if (n <= 4)
+        {
+            num = num - n;
+        }
+        else
+        {
+            num = (num / 10 + 1) * 10;
+        }
+        return num;
     }
 }
