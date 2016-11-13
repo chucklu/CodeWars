@@ -3,24 +3,11 @@
 [TestFixture]
 public class KataTests
 {
-    private Kata kata = new Kata();
-
     [Test]
-    public void _0_ShouldReturn10ForNumbersFrom10To14()
+    public void BasicTests()
     {
-        for (int i = 10; i <= 14; ++i)
-        {
-            Assert.AreEqual(10, kata.ClosestMultiple10(i));
-        }
-    }
-
-    [Test]
-    public void _1_ShouldReturn20ForNumbersFrom15To20()
-    {
-        for (int i = 15; i <= 20; ++i)
-        {
-            Assert.AreEqual(20, kata.ClosestMultiple10(i));
-        }
+        Assert.AreEqual(new int[0], Kata.reverseList(new int[0]));
+        Assert.AreEqual(new int[] { 3, 2, 1 }, Kata.reverseList(new int[] { 1, 2, 3 }));
     }
 }
 
