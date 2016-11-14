@@ -6,8 +6,9 @@ public class KataTests
     [Test]
     public void BasicTests()
     {
-        Assert.AreEqual(new int[0], Kata.reverseList(new int[0]));
-        Assert.AreEqual(new int[] { 3, 2, 1 }, Kata.reverseList(new int[] { 1, 2, 3 }));
+        Assert.AreEqual(string.Join(",", new int[] { 1 }), string.Join(",", Kata.Climb(1)));
+        Assert.AreEqual(string.Join(",", new int[] { 1, 2, 5, 10 }), string.Join(",", Kata.Climb(10)));
+        Assert.AreEqual(string.Join(",", new int[] { 1, 3, 6, 13 }), string.Join(",", Kata.Climb(13)));
     }
 }
 

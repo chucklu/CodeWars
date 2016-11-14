@@ -1,13 +1,19 @@
-﻿using System;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 /// <summary>
-/// https://www.codewars.com/kata/reverse-list/train/csharp
+/// https://www.codewars.com/kata/number-climber/train/csharp
 /// </summary>
 public class Kata
 {
-    public static int[] reverseList(int[] list)
+    public static int[] Climb(int n)
     {
-        Array.Reverse(list);
-        return list;
+        var list = new List<int> { n };
+        while (n > 1)
+        {
+            n = n / 2;
+            list.Add(n);
+        }
+        return list.OrderBy(y => y).ToArray();
     }
 }
