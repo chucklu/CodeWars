@@ -1,19 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 
 /// <summary>
-/// https://www.codewars.com/kata/number-climber/train/csharp
+/// https://www.codewars.com/kata/sort-array-by-string-length/train/csharp
 /// </summary>
 public class Kata
 {
-    public static int[] Climb(int n)
+    public static string[] SortByLength(string[] array)
     {
-        var list = new List<int> { n };
-        while (n > 1)
-        {
-            n = n / 2;
-            list.Add(n);
-        }
-        return list.OrderBy(y => y).ToArray();
+        return array.OrderBy(x => x.Length).ToArray();
     }
 }
