@@ -1,12 +1,16 @@
-﻿using System.Linq;
+﻿using System;
 
 /// <summary>
-/// https://www.codewars.com/kata/sort-array-by-string-length/train/csharp
+/// https://www.codewars.com/kata/keep-hydrated-1/train/csharp
 /// </summary>
 public class Kata
 {
-    public static string[] SortByLength(string[] array)
+    private const double LitresPerHour = 0.5;
+
+    public static int Litres(double time)
     {
-        return array.OrderBy(x => x.Length).ToArray();
+        double total = time * LitresPerHour;
+        int result = Convert.ToInt32(Math.Floor(total));
+        return result;
     }
 }
