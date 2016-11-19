@@ -1,16 +1,10 @@
-﻿using System;
-
-/// <summary>
-/// https://www.codewars.com/kata/keep-hydrated-1/train/csharp
+﻿/// <summary>
+/// https://www.codewars.com/kata/remove-first-and-last-character/train/csharp
 /// </summary>
 public class Kata
 {
-    private const double LitresPerHour = 0.5;
-
-    public static int Litres(double time)
+    public static string Remove_char(string s)
     {
-        double total = time * LitresPerHour;
-        int result = Convert.ToInt32(Math.Floor(total));
-        return result;
+        return s.Substring(1, s.Length - 1).Substring(0, s.Length - 2);
     }
 }

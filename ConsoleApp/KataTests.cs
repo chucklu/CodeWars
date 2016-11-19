@@ -3,45 +3,18 @@
 [TestFixture]
 public class KataTests
 {
-    [Test]
-    public static void Test1()
+    [TestFixture]
+    public class Test
     {
-        Assert.AreEqual(1, Kata.Litres(2));
-    }
-
-    [Test]
-    public static void Test2()
-    {
-        Assert.AreEqual(0, Kata.Litres(1.4));
-    }
-
-    [Test]
-    public static void Test3()
-    {
-        Assert.AreEqual(6, Kata.Litres(12.3));
-    }
-
-    [Test]
-    public static void Test4()
-    {
-        Assert.AreEqual(0, Kata.Litres(0.82));
-    }
-
-    [Test]
-    public static void Test5()
-    {
-        Assert.AreEqual(5, Kata.Litres(11.8));
-    }
-
-    [Test]
-    public static void Test6()
-    {
-        Assert.AreEqual(893, Kata.Litres(1787));
-    }
-    [Test]
-    public static void Test7()
-    {
-        Assert.AreEqual(0, Kata.Litres(0));
+        [Test]
+        public void Test1()
+        {
+            StringAssert.AreEqualIgnoringCase("loquen", Kata.Remove_char("eloquent"));
+            StringAssert.AreEqualIgnoringCase("ountr", Kata.Remove_char("country"));
+            StringAssert.AreEqualIgnoringCase("erso", Kata.Remove_char("person"));
+            StringAssert.AreEqualIgnoringCase("lac", Kata.Remove_char("place"));
+            StringAssert.AreEqualIgnoringCase("", Kata.Remove_char("ok"));
+        }
     }
 }
 
