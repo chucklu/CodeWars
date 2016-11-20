@@ -7,13 +7,18 @@ public class KataTests
     public class Test
     {
         [Test]
-        public void Test1()
+        public void BasicTests()
         {
-            StringAssert.AreEqualIgnoringCase("loquen", Kata.Remove_char("eloquent"));
-            StringAssert.AreEqualIgnoringCase("ountr", Kata.Remove_char("country"));
-            StringAssert.AreEqualIgnoringCase("erso", Kata.Remove_char("person"));
-            StringAssert.AreEqualIgnoringCase("lac", Kata.Remove_char("place"));
-            StringAssert.AreEqualIgnoringCase("", Kata.Remove_char("ok"));
+            //a+b?
+            Assert.AreEqual(1, new Kata().Testit(0, 1));
+            Assert.AreEqual(3, new Kata().Testit(1, 2));
+            Assert.AreEqual(30, new Kata().Testit(10, 20));
+            //a*b?
+            Assert.AreEqual(1, new Kata().Testit(1, 1));
+            Assert.AreEqual(3, new Kata().Testit(1, 3));
+
+            Assert.AreEqual(2, new Kata().Testit(2, 2));
+            Assert.AreEqual(31, new Kata().Testit(11, 22));
         }
     }
 }

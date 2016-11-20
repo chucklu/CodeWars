@@ -1,10 +1,10 @@
 ﻿/// <summary>
-/// https://www.codewars.com/kata/remove-first-and-last-character/train/csharp
+/// https://www.codewars.com/kata/thinking-and-testing-a-and-b/train/csharp
 /// </summary>
 public class Kata
 {
-    public static string Remove_char(string s)
+    public int Testit(int a, int b)
     {
-        return s.Substring(1, s.Length - 1).Substring(0, s.Length - 2);
+        return a | b;
     }
 }
