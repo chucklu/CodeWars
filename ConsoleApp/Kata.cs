@@ -1,10 +1,17 @@
 ﻿/// <summary>
-/// https://www.codewars.com/kata/thinking-and-testing-a-and-b/train/csharp
+/// https://www.codewars.com/kata/recursion-number-1-factorial/train/csharp
 /// </summary>
-public class Kata
+public class Recursion
 {
-    public int Testit(int a, int b)
+    public static ulong Factorial(ulong n)
     {
-        return a | b;
+        checked
+        {
+            if (n == 0||n==1)
+            {
+                return 1;
+            }
+            return n*Factorial(n - 1);
+        }
     }
 }
