@@ -1,18 +1,39 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 
 [TestFixture]
 public class KataTests
 {
     [TestFixture]
-    public class Test
+    public class SolutionTest
     {
+        private Func<int, bool> isEven = (value) => value % 2 == 0;
+
         [Test]
-        public void BasicTests()
+        public void BasicTest1()
         {
-            Assert.AreEqual(1, Recursion.Factorial(0));
-            Assert.AreEqual(1, Recursion.Factorial(1));
-            Assert.AreEqual(2, Recursion.Factorial(2));
-            Assert.AreEqual(6, Recursion.Factorial(3));
+            var expected = new int[] { 1, 5, 4, 3 };
+            var actual = Kata.DropWhile(new int[] { 2, 6, 4, 10, 1, 5, 4, 3 }, isEven);
+
+            Assert.AreEqual(string.Join(", ", expected), string.Join(", ", actual));
+        }
+
+        [Test]
+        public void BasicTest2()
+        {
+            var expected = new int[] { 5, 3, 4, 6 };
+            var actual = Kata.DropWhile(new int[] { 2, 100, 1000, 10000, 5, 3, 4, 6 }, isEven);
+
+            Assert.AreEqual(string.Join(", ", expected), string.Join(", ", actual));
+        }
+
+        [Test]
+        public void BasicTest3()
+        {
+            var expected = new int[] { };
+            var actual = Kata.DropWhile(new int[] { 2, 4, 10, 100, 64, 78, 92 }, isEven);
+
+            Assert.AreEqual(string.Join(", ", expected), string.Join(", ", actual));
         }
     }
 }
