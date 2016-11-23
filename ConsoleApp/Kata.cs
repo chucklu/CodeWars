@@ -1,13 +1,12 @@
-﻿using System;
-using System.Linq;
+﻿using System.Threading;
 
 /// <summary>
-/// https://www.codewars.com/kata/the-dropwhile-function/train/csharp
+/// https://www.codewars.com/kata/jaden-casing-strings/train/csharp
 /// </summary>
-public class Kata
+public static class Kata
 {
-    public static int[] DropWhile(int[] arr, Func<int, bool> pred)
+    public static string ToJadenCase(this string phrase)
     {
-        return arr.SkipWhile(pred).ToArray();
+        return Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(phrase);
     }
 }
