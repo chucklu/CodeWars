@@ -4,11 +4,11 @@
 public class KataTests
 {
     [Test]
-    public void FixedTest()
+    public void BasicTests()
     {
-        Assert.AreEqual("How Can Mirrors Be Real If Our Eyes Aren't Real",
-                        "How can mirrors be real if our eyes aren't real".ToJadenCase(),
-                        "Strings didn't match.");
+        Assert.AreEqual("whatfickdamncake", Kata.Borrow("WhAt! FiCK! DaMn CAke?"));
+        Assert.AreEqual("thebigpeoplehere", Kata.Borrow("THE big PeOpLE Here!!"));
+        Assert.AreEqual("iamatinyboy", Kata.Borrow("i AM a TINY BoY!!"));
     }
 }
 

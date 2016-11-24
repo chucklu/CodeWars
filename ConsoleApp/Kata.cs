@@ -1,12 +1,13 @@
-﻿using System.Threading;
+﻿using System.Linq;
+using System.Threading;
 
 /// <summary>
-/// https://www.codewars.com/kata/jaden-casing-strings/train/csharp
+/// https://www.codewars.com/kata/borrower-speak/train/csharp
 /// </summary>
 public static class Kata
 {
-    public static string ToJadenCase(this string phrase)
+    public static string Borrow(string s)
     {
-        return Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(phrase);
+        return string.Concat(s.Where(char.IsLetter).Select(char.ToLower));
     }
 }
