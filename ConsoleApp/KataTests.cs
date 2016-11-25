@@ -3,12 +3,17 @@
 [TestFixture]
 public class KataTests
 {
+    int[] Test1 = new int[] { 0, 0, 0, 0 };
+    int[] Test2 = new int[] { 1, 1, 1, 1 };
+    int[] Test3 = new int[] { 0, 1, 1, 0 };
+    int[] Test4 = new int[] { 0, 1, 0, 1 };
     [Test]
-    public void BasicTests()
+    public void BasicTesting()
     {
-        Assert.AreEqual("whatfickdamncake", Kata.Borrow("WhAt! FiCK! DaMn CAke?"));
-        Assert.AreEqual("thebigpeoplehere", Kata.Borrow("THE big PeOpLE Here!!"));
-        Assert.AreEqual("iamatinyboy", Kata.Borrow("i AM a TINY BoY!!"));
+        Assert.AreEqual(0, Kata.binaryArrayToNumber(Test1));
+        Assert.AreEqual(15, Kata.binaryArrayToNumber(Test2));
+        Assert.AreEqual(6, Kata.binaryArrayToNumber(Test3));
+        Assert.AreEqual(5, Kata.binaryArrayToNumber(Test4));
     }
 }
 

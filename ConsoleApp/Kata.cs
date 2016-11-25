@@ -1,13 +1,13 @@
-﻿using System.Linq;
-using System.Threading;
+﻿using System;
 
 /// <summary>
-/// https://www.codewars.com/kata/borrower-speak/train/csharp
+/// https://www.codewars.com/kata/ones-and-zeros/train/csharp
 /// </summary>
 public static class Kata
 {
-    public static string Borrow(string s)
+    public static int binaryArrayToNumber(int[] binaryArray)
     {
-        return string.Concat(s.Where(char.IsLetter).Select(char.ToLower));
+        var str = string.Concat(binaryArray);
+        return Convert.ToInt32(str, 2);
     }
 }
