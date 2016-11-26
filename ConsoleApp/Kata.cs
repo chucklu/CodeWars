@@ -1,13 +1,13 @@
 ﻿using System;
 
 /// <summary>
-/// https://www.codewars.com/kata/ones-and-zeros/train/csharp
+/// https://www.codewars.com/kata/grasshopper-basic-function-fixer/train/csharp
 /// </summary>
 public static class Kata
 {
-    public static int binaryArrayToNumber(int[] binaryArray)
+    public static int AddFive(int num)
     {
-        var str = string.Concat(binaryArray);
-        return Convert.ToInt32(str, 2);
+        int total = num + 5;
+        return total;
     }
 }

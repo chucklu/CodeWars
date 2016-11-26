@@ -3,17 +3,13 @@
 [TestFixture]
 public class KataTests
 {
-    int[] Test1 = new int[] { 0, 0, 0, 0 };
-    int[] Test2 = new int[] { 1, 1, 1, 1 };
-    int[] Test3 = new int[] { 0, 1, 1, 0 };
-    int[] Test4 = new int[] { 0, 1, 0, 1 };
     [Test]
-    public void BasicTesting()
+    [TestCase(5, ExpectedResult = 10)]
+    [TestCase(0, ExpectedResult = 5)]
+    [TestCase(-5, ExpectedResult = 0)]
+    public static int FixedTest(int num)
     {
-        Assert.AreEqual(0, Kata.binaryArrayToNumber(Test1));
-        Assert.AreEqual(15, Kata.binaryArrayToNumber(Test2));
-        Assert.AreEqual(6, Kata.binaryArrayToNumber(Test3));
-        Assert.AreEqual(5, Kata.binaryArrayToNumber(Test4));
+        return Kata.AddFive(num);
     }
 }
 
