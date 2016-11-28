@@ -6,11 +6,9 @@ public class KataTests
     [Test]
     public void BasicTests()
     {
-        Assert.AreEqual(56, Kata.SumTriangularNumbers(6));
-        Assert.AreEqual(7140, Kata.SumTriangularNumbers(34));
-        Assert.AreEqual(0, Kata.SumTriangularNumbers(-291));
-        Assert.AreEqual(140205240, Kata.SumTriangularNumbers(943));
-        Assert.AreEqual(0, Kata.SumTriangularNumbers(-971));
+        string[] expected = { "Ryan", "Mark" };
+        string[] names = { "Ryan", "Kieran", "Mark", "Jimmy" };
+        CollectionAssert.AreEqual(expected, Kata.FriendOrFoe(names));
     }
 }
 
