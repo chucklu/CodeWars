@@ -1,13 +1,38 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 
 /// <summary>
-/// https://www.codewars.com/kata/friend-or-foe/train/csharp
+/// https://www.codewars.com/kata/replace-every-nth/train/csharp
 /// </summary>
-public static class Kata
+public class Kata
 {
-    public static IEnumerable<string> FriendOrFoe(string[] names)
+    public static string ReplaceNth(string text, int n, char oldValue, char newValue)
     {
-        return names.Where(x => x.Length == 4);
+        if (n <= 0 || n >= text.Length)
+        {
+            return text;
+        }
+        var list = new List<char>();
+        int i = 0;
+        foreach (var item in text)
+        {
+            if (item == oldValue)
+            {
+                i++;
+                if (i == n)
+                {
+                    i = 0;
+                    list.Add(newValue);
+                }
+                else
+                {
+                    list.Add(item);
+                }
+            }
+            else
+            {
+                list.Add(item);
+            }
+        }
+        return string.Concat(list);
     }
 }
