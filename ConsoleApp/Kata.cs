@@ -1,38 +1,18 @@
-﻿using System.Collections.Generic;
+﻿using System.Linq;
 
 /// <summary>
-/// https://www.codewars.com/kata/replace-every-nth/train/csharp
+/// https://www.codewars.com/kata/find-the-stray-number/train/csharp
 /// </summary>
 public class Kata
 {
-    public static string ReplaceNth(string text, int n, char oldValue, char newValue)
+    public static int Stray(int[] numbers)
     {
-        if (n <= 0 || n >= text.Length)
+        int first = numbers.First();
+        var count = numbers.Count(x => x == first);
+        if (count >= 2)
         {
-            return text;
+            return numbers.Where(x => x != first).First();
         }
-        var list = new List<char>();
-        int i = 0;
-        foreach (var item in text)
-        {
-            if (item == oldValue)
-            {
-                i++;
-                if (i == n)
-                {
-                    i = 0;
-                    list.Add(newValue);
-                }
-                else
-                {
-                    list.Add(item);
-                }
-            }
-            else
-            {
-                list.Add(item);
-            }
-        }
-        return string.Concat(list);
+        return first;
     }
 }
