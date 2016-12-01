@@ -1,18 +1,14 @@
-﻿using System.Linq;
-
-/// <summary>
-/// https://www.codewars.com/kata/find-the-stray-number/train/csharp
+﻿/// <summary>
+/// https://www.codewars.com/kata/factorial-1/train/csharp
 /// </summary>
 public class Kata
 {
-    public static int Stray(int[] numbers)
+    public static int factorial(int n)
     {
-        int first = numbers.First();
-        var count = numbers.Count(x => x == first);
-        if (count >= 2)
+        if (n == 0 || n == 1)
         {
-            return numbers.Where(x => x != first).First();
+            return 1;
         }
-        return first;
+        return n*factorial(n - 1);
     }
 }
