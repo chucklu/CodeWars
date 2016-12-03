@@ -1,14 +1,21 @@
-﻿using System.Linq;
+﻿using System;
 
 /// <summary>
-/// https://www.codewars.com/kata/complete-the-pattern-number-4/train/csharp
+/// https://www.codewars.com/kata/unlucky-days/train/csharp
 /// </summary>
 public class Kata
 {
-    public static string Pattern(int n)
+    public static int UnluckyDays(int year)
     {
-        if (n <= 0)
-            return string.Empty;
-        return string.Join("\n", Enumerable.Range(1, n).Select(i => string.Concat(Enumerable.Range(i, n - i + 1))));
+        int count = 0;
+        for (int i = 1; i <= 12; i++)
+        {
+            var dateTime = new DateTime(year, i, 13);
+            if (dateTime.DayOfWeek == DayOfWeek.Friday)
+            {
+                count++;
+            }
+        }
+        return count;
     }
 }
