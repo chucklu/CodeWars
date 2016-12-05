@@ -1,13 +1,17 @@
-﻿using System;
+﻿using System.Linq;
 
 /// <summary>
-/// https://www.codewars.com/kata/sort-arrays-1/train/csharp
+/// https://www.codewars.com/kata/find-missing-numbers/train/csharp
 /// </summary>
 public class Kata
 {
-    public static string[] SortMe(string[] names)
+    public static int[] FindMissingNumbers(int[] arr)
     {
-        Array.Sort(names);
-        return names;
+        if (arr.Length == 0)
+        {
+            return arr;
+        }
+        var fullArray = Enumerable.Range(arr[0], arr[arr.Length - 1] - arr[0] + 1).ToArray();
+        return fullArray.Except(arr).ToArray();
     }
 }
