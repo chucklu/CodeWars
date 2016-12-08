@@ -1,17 +1,10 @@
-﻿using System.Linq;
-
-/// <summary>
-/// https://www.codewars.com/kata/find-missing-numbers/train/csharp
+﻿/// <summary>
+/// https://www.codewars.com/kata/convert-a-string-to-an-array/train/csharp
 /// </summary>
 public class Kata
 {
-    public static int[] FindMissingNumbers(int[] arr)
+    public static string[] StringToArray(string str)
     {
-        if (arr.Length == 0)
-        {
-            return arr;
-        }
-        var fullArray = Enumerable.Range(arr[0], arr[arr.Length - 1] - arr[0] + 1).ToArray();
-        return fullArray.Except(arr).ToArray();
+        return str.Split(' ');
     }
 }
