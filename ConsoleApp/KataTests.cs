@@ -6,7 +6,7 @@ public class KataTests
     [Test]
     public void BasicTests()
     {
-        Assert.AreEqual(new string[] { "Robin", "Singh" }, Kata.StringToArray("Robin Singh"));
+        Assert.AreEqual(100.00M, Kata.DiscoverOriginalPrice(75M, 25M));
     }
 }
 
