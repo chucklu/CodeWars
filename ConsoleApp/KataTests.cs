@@ -6,7 +6,9 @@ public class KataTests
     [Test]
     public void BasicTests()
     {
-        Assert.AreEqual(100.00M, Kata.DiscoverOriginalPrice(75M, 25M));
+        Assert.AreEqual("ABC", Kata.alternateCase("abc"));
+        Assert.AreEqual("abc", Kata.alternateCase("ABC"));
+        Assert.AreEqual("hELLO wORLD", Kata.alternateCase("Hello World"));
     }
 }
 

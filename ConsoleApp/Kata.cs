@@ -1,14 +1,21 @@
-﻿using System;
+﻿using System.Linq;
 
 /// <summary>
-/// https://www.codewars.com/kata/discover-the-original-price/train/csharp
+/// https://www.codewars.com/kata/alternate-case/train/csharp
 /// </summary>
 public class Kata
 {
-    public static decimal DiscoverOriginalPrice(decimal discountedPrice, decimal salePercentage)
+    public static string alternateCase(string s)
     {
-        decimal origin = discountedPrice / (1 - salePercentage / 100);
-        decimal o = Math.Round(origin, 2);
-        return o;
+        return string.Concat(s.Select(Switch));
+    }
+
+    public static char Switch(char c)
+    {
+        if (char.IsLower(c))
+        {
+            return char.ToUpper(c);
+        }
+        return char.ToLower(c);
     }
 }
