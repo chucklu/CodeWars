@@ -1,21 +1,23 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 /// <summary>
-/// https://www.codewars.com/kata/alternate-case/train/csharp
+/// https://www.codewars.com/kata/all-inclusive/train/csharp
 /// </summary>
 public class Kata
 {
-    public static string alternateCase(string s)
+    public static bool ContainAllRots(string temp, List<string> list)
     {
-        return string.Concat(s.Select(Switch));
-    }
-
-    public static char Switch(char c)
-    {
-        if (char.IsLower(c))
+        if (temp.Equals(string.Empty))
         {
-            return char.ToUpper(c);
+            return true;
         }
-        return char.ToLower(c);
+        var list1 = new List<string> { temp };
+        for (int i = 1; i < temp.Length; i++)
+        {
+            var s = temp.Substring(i, temp.Length - i) + temp.Substring(0, i);
+            list1.Add(s);
+        }
+        return !list1.Except(list).Any();
     }
 }
