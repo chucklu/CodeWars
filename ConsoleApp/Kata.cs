@@ -1,23 +1,22 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 
 /// <summary>
-/// https://www.codewars.com/kata/all-inclusive/train/csharp
+/// https://www.codewars.com/kata/compare-strings-by-sum-of-chars/train/csharp
 /// </summary>
 public class Kata
 {
-    public static bool ContainAllRots(string temp, List<string> list)
+    public static bool Compare(string s1, string s2)
     {
-        if (temp.Equals(string.Empty))
+        if (string.IsNullOrEmpty(s1) || s1.All(char.IsLetter) == false)
         {
-            return true;
+            s1 = string.Empty;
         }
-        var list1 = new List<string> { temp };
-        for (int i = 1; i < temp.Length; i++)
+        if (string.IsNullOrEmpty(s2) || s2.All(char.IsLetter) == false)
         {
-            var s = temp.Substring(i, temp.Length - i) + temp.Substring(0, i);
-            list1.Add(s);
+            s2 = string.Empty;
         }
-        return !list1.Except(list).Any();
+        int sum1 = s1.ToUpper().Sum(x => x);
+        int sum2 = s2.ToUpper().Sum(x => x);
+        return sum1 == sum2;
     }
-}
+} 
