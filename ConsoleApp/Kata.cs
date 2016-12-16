@@ -1,22 +1,71 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 /// <summary>
-/// https://www.codewars.com/kata/compare-strings-by-sum-of-chars/train/csharp
+/// https://www.codewars.com/kata/pokerhand-straight-or-not/train/csharp
 /// </summary>
-public class Kata
+public static class PokerHand
 {
-    public static bool Compare(string s1, string s2)
+    public static bool IsStraight(List<Card> cards)
     {
-        if (string.IsNullOrEmpty(s1) || s1.All(char.IsLetter) == false)
+        bool flag = false;
+        if (cards.Count < 5)
         {
-            s1 = string.Empty;
+            return flag;
         }
-        if (string.IsNullOrEmpty(s2) || s2.All(char.IsLetter) == false)
+        var array = cards.Select(Ace).OrderBy(x => x).ToArray();
+        flag = Is5Order(array);
+        if (flag == false)
         {
-            s2 = string.Empty;
+            array = cards.Select(x => x.CardValue).OrderBy(x => x).ToArray();
+            flag = Is5Order(array);
         }
-        int sum1 = s1.ToUpper().Sum(x => x);
-        int sum2 = s2.ToUpper().Sum(x => x);
-        return sum1 == sum2;
+        return flag;
     }
-} 
+
+    private static bool Is5Order(int[] array)
+    {
+        for (int i = 0; i < array.Length - 1; i++)
+        {
+            int count = 0;
+            for (int j = i; j < array.Length - 1; j++)
+            {
+                if (array[j] + 1 == array[j + 1])
+                {
+                    count++;
+                    if (count == 4)
+                    {
+                        return true;
+                    }
+                }
+                else if (array[j] == array[j + 1])
+                {
+                }
+                else
+                {
+
+                    if (count < 4)
+                    {
+                        break;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    private static int Ace(Card card)
+    {
+        if (card.CardValue == 14)
+        {
+            return 1;
+        }
+        return card.CardValue;
+    }
+}
+
+public class Card
+{
+    public int CardValue { get; set; } // 2-14
+}
