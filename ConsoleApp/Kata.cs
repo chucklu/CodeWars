@@ -1,15 +1,13 @@
-﻿using System.Linq;
-using System.Net;
+﻿using System;
 
 /// <summary>
-/// https://www.codewars.com/kata/ipv4-validator/train/csharp
+/// https://www.codewars.com/kata/sum-of-two-lowest-positive-integers/train/csharp
 /// </summary>
 public class Kata
 {
-    public static bool IpValidator(string ip)
+    public static int sumTwoSmallestNumbers(int[] numbers)
     {
-        if (ip.Count(c => c == '.') != 3) return false;
-        IPAddress address;
-        return IPAddress.TryParse(ip, out address);
+        Array.Sort(numbers);
+        return numbers[0] + numbers[1];
     }
 }

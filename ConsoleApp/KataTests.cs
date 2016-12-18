@@ -3,11 +3,10 @@
 [TestFixture]
 public class KataTests
 {
-    [TestCase("123.456.789.0", false)]
-    [TestCase("127.0.0.1", true)]
     public void IpValidatorTest(string ip, bool isValid)
     {
-        Assert.AreEqual(isValid, Kata.IpValidator(ip));
+        int[] numbers = { 5, 8, 12, 19, 22 };
+        Assert.AreEqual(13, Kata.sumTwoSmallestNumbers(numbers));
     }
 }
 
