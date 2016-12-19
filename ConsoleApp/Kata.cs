@@ -1,13 +1,12 @@
-﻿using System;
+﻿using System.Linq;
 
 /// <summary>
-/// https://www.codewars.com/kata/sum-of-two-lowest-positive-integers/train/csharp
+/// https://www.codewars.com/kata/shortest-word/train/csharp
 /// </summary>
 public class Kata
 {
-    public static int sumTwoSmallestNumbers(int[] numbers)
+    public static int FindShort(string s)
     {
-        Array.Sort(numbers);
-        return numbers[0] + numbers[1];
+        return s.Split(' ').Min(x => x.Length);
     }
 }

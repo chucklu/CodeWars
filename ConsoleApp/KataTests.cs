@@ -3,10 +3,11 @@
 [TestFixture]
 public class KataTests
 {
-    public void IpValidatorTest(string ip, bool isValid)
+    [Test]
+    public void BasicTests()
     {
-        int[] numbers = { 5, 8, 12, 19, 22 };
-        Assert.AreEqual(13, Kata.sumTwoSmallestNumbers(numbers));
+        Assert.AreEqual(3, Kata.FindShort("bitcoin take over the world maybe who knows perhaps"));
+        Assert.AreEqual(3, Kata.FindShort("turns out random test cases are easier than writing out basic ones"));
     }
 }
 
