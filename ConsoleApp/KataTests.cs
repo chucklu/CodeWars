@@ -6,8 +6,7 @@ public class KataTests
     [Test]
     public void BasicTests()
     {
-        Assert.AreEqual(3, Kata.FindShort("bitcoin take over the world maybe who knows perhaps"));
-        Assert.AreEqual(3, Kata.FindShort("turns out random test cases are easier than writing out basic ones"));
+        Assert.AreEqual("0+1+2+3+4+5+6 = 21", Kata.ShowSequence(6));
     }
 }
 
