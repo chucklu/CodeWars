@@ -1,20 +1,12 @@
-﻿using System.Linq;
+﻿using System;
 
 /// <summary>
-/// https://www.codewars.com/kata/sum-of-numbers-from-0-to-n/train/csharp
+/// https://www.codewars.com/kata/calculate-meal-total/train/csharp
 /// </summary>
 public class Kata
 {
-    public static string ShowSequence(int n)
+    public static double CalculateTotal(double subtotal, int tax, int tip)
     {
-        if (n < 0)
-        {
-            return $"{n}<0";
-        }
-        if (n == 0)
-        {
-            return "0=0";
-        }
-        return string.Join("+", Enumerable.Range(0, n + 1)) + $" = {n * (n + 1) / 2}";
+        return Math.Round(subtotal * (1 + (tax + tip) / 100.0), 2);
     }
 }

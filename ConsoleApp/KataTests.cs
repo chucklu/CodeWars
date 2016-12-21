@@ -6,7 +6,8 @@ public class KataTests
     [Test]
     public void BasicTests()
     {
-        Assert.AreEqual("0+1+2+3+4+5+6 = 21", Kata.ShowSequence(6));
+        Assert.AreEqual(5.75, Kata.CalculateTotal(5.00, 5, 10));
+        Assert.AreEqual(45.10, Kata.CalculateTotal(36.97, 7, 15));
     }
 }
 
