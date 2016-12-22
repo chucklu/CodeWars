@@ -1,12 +1,12 @@
-﻿using System;
+﻿using System.Linq;
 
 /// <summary>
-/// https://www.codewars.com/kata/calculate-meal-total/train/csharp
+/// https://www.codewars.com/kata/how-many-times-does-it-contain/train/csharp
 /// </summary>
 public class Kata
 {
-    public static double CalculateTotal(double subtotal, int tax, int tip)
+    public static int stringCounter(string inputS, string charS)
     {
-        return Math.Round(subtotal * (1 + (tax + tip) / 100.0), 2);
+        return inputS.Count(x => x == charS[0]);
     }
 }
