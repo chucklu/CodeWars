@@ -6,10 +6,10 @@ public class KataTests
     [Test]
     public void BasicTests()
     {
-        Assert.AreEqual(2, Kata.stringCounter("Hello world", "o"));
-        Assert.AreEqual(4, Kata.stringCounter("Wait isn't it supposed to be cynical?", "i"));
-        Assert.AreEqual(4, Kata.stringCounter("I'm gona be the best code warrior ever dad", "r"));
-        Assert.AreEqual(1, Kata.stringCounter("Do you like Harry Potter?", "?"));
+        Assert.AreEqual("Jack Ryan", Kata.InitializeNames("Jack Ryan"));
+        Assert.AreEqual("Lois M. Lane", Kata.InitializeNames("Lois Mary Lane"));
+        Assert.AreEqual("Dimitri", Kata.InitializeNames("Dimitri"));
+        Assert.AreEqual("Alice B. C. Davis", Kata.InitializeNames("Alice Betty Catherine Davis"));
     }
 }
 

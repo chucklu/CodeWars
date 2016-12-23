@@ -1,12 +1,27 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
 
 /// <summary>
-/// https://www.codewars.com/kata/how-many-times-does-it-contain/train/csharp
+/// https://www.codewars.com/kata/initialize-my-name/train/csharp
 /// </summary>
 public class Kata
 {
-    public static int stringCounter(string inputS, string charS)
+    public static string InitializeNames(string name)
     {
-        return inputS.Count(x => x == charS[0]);
+        var array = name.Split(' ');
+        int index = 0;
+        var list = new List<string>();
+        foreach (var item in array)
+        {
+            index++;
+            if (index == 1 || index == array.Length)
+            {
+                list.Add(item);
+            }
+            else
+            {
+                list.Add(item.Substring(0, 1) + ".");
+            }
+        }
+        return string.Join(" ", list);
     }
 }
