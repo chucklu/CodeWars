@@ -1,27 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using System;
 
 /// <summary>
-/// https://www.codewars.com/kata/initialize-my-name/train/csharp
+/// https://www.codewars.com/kata/sort-numbers/train/csharp
 /// </summary>
 public class Kata
 {
-    public static string InitializeNames(string name)
+    public static int[] SortNumbers(int[] nums)
     {
-        var array = name.Split(' ');
-        int index = 0;
-        var list = new List<string>();
-        foreach (var item in array)
+        if (nums == null)
         {
-            index++;
-            if (index == 1 || index == array.Length)
-            {
-                list.Add(item);
-            }
-            else
-            {
-                list.Add(item.Substring(0, 1) + ".");
-            }
+            return new int[] { };
         }
-        return string.Join(" ", list);
+        Array.Sort(nums);
+        return nums;
     }
 }
