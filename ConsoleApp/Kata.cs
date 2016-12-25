@@ -1,17 +1,17 @@
-﻿using System;
+﻿using System.Linq;
 
 /// <summary>
-/// https://www.codewars.com/kata/sort-numbers/train/csharp
+/// https://www.codewars.com/kata/only-one/train/csharp
 /// </summary>
 public class Kata
 {
-    public static int[] SortNumbers(int[] nums)
+    public static bool OnlyOne(params bool[] flags)
     {
-        if (nums == null)
+        if (flags.Length == 0)
         {
-            return new int[] { };
+            return false;
         }
-        Array.Sort(nums);
-        return nums;
+        int count = flags.Where(x => x).Count();
+        return count == 1;
     }
 }
