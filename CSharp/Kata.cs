@@ -1,17 +1,16 @@
 ﻿using System.Linq;
 
 /// <summary>
-/// https://www.codewars.com/kata/only-one/train/csharp
+/// https://www.codewars.com/kata/calculate-average/train/csharp
 /// </summary>
 public class Kata
 {
-    public static bool OnlyOne(params bool[] flags)
+    public static double FindAverage(double[] array)
     {
-        if (flags.Length == 0)
+        if (array.Length == 0)
         {
-            return false;
+            return 0;
         }
-        int count = flags.Where(x => x).Count();
-        return count == 1;
+        return array.Average();
     }
 }
