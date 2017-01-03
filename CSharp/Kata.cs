@@ -1,16 +1,18 @@
-﻿using System.Linq;
-
-/// <summary>
-/// https://www.codewars.com/kata/calculate-average/train/csharp
+﻿/// <summary>
+/// https://www.codewars.com/kata/keep-up-the-hoop/train/csharp
 /// </summary>
 public class Kata
 {
-    public static double FindAverage(double[] array)
+    private const string A = "Great, now move on to tricks";
+
+    private const string B = "Keep at it until you get it";
+
+    public static string HoopCount(int n)
     {
-        if (array.Length == 0)
+        if (n >= 10)
         {
-            return 0;
+            return A;
         }
-        return array.Average();
+        return B;
     }
 }

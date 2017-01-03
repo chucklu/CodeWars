@@ -6,11 +6,8 @@ public class KataTests
     [Test]
     public void BasicTests()
     {
-        double[] array = new double[] { 17, 16, 16, 16, 16, 15, 17, 17, 15, 5, 17, 17, 16 };
-        Assert.AreEqual(200.0 / 13.0, Kata.FindAverage(array));
-
-        // Should return 0 on empty array
-        Assert.AreEqual(0, Kata.FindAverage(new double[] { }));
+        Assert.AreEqual("Keep at it until you get it", Kata.HoopCount(6), "Should work for 6");
+        Assert.AreEqual("Great, now move on to tricks", Kata.HoopCount(22), "Should work for 22");
     }
 }
 
