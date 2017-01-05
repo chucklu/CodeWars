@@ -1,18 +1,10 @@
 ﻿/// <summary>
-/// https://www.codewars.com/kata/keep-up-the-hoop/train/csharp
+/// https://www.codewars.com/kata/simple-fun-number-1-seats-in-theater/train/csharp
 /// </summary>
 public class Kata
 {
-    private const string A = "Great, now move on to tricks";
-
-    private const string B = "Keep at it until you get it";
-
-    public static string HoopCount(int n)
+    public static int SeatsInTheater(int nCols, int nRows, int col, int row)
     {
-        if (n >= 10)
-        {
-            return A;
-        }
-        return B;
+        return (nCols - col + 1) * (nRows - row);
     }
 }
