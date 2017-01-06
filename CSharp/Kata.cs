@@ -1,10 +1,17 @@
-﻿/// <summary>
-/// https://www.codewars.com/kata/simple-fun-number-1-seats-in-theater/train/csharp
+﻿using System.Linq;
+
+/// <summary>
+/// https://www.codewars.com/kata/how-many-stairs-will-suzuki-climb-in-20-years/train/csharp
 /// </summary>
 public class Kata
 {
-    public static int SeatsInTheater(int nCols, int nRows, int col, int row)
+    public static long StairsIn20(int[][] stairs)
     {
-        return (nCols - col + 1) * (nRows - row);
+        long sum = 0;
+        foreach (var item in stairs)
+        {
+            sum = sum + item.Sum();
+        }
+        return sum * 20;
     }
 }
