@@ -1,17 +1,23 @@
-﻿using System.Linq;
-
-/// <summary>
-/// https://www.codewars.com/kata/how-many-stairs-will-suzuki-climb-in-20-years/train/csharp
+﻿/// <summary>
+/// https://www.codewars.com/kata/fac-recursion-pest-control-find-the-bugs-and-fix-them/train/csharp
 /// </summary>
 public class Kata
 {
-    public static long StairsIn20(int[][] stairs)
+    public int FacCalculation(int startValue)
     {
-        long sum = 0;
-        foreach (var item in stairs)
+        return FacRecursion(startValue);
+    }
+
+    protected int FacRecursion(int value)
+    {
+        if (value < 0)
         {
-            sum = sum + item.Sum();
+            return 0;
         }
-        return sum * 20;
+        if (value == 1 || value == 0)
+        {
+            return 1;
+        }
+        return value*FacRecursion(value - 1);
     }
 }
