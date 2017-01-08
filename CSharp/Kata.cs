@@ -1,23 +1,18 @@
 ﻿/// <summary>
-/// https://www.codewars.com/kata/fac-recursion-pest-control-find-the-bugs-and-fix-them/train/csharp
+/// https://www.codewars.com/kata/how-many-e-mails-we-sent-today/train/csharp
 /// </summary>
 public class Kata
 {
-    public int FacCalculation(int startValue)
+    public static string CountEmails(int sent, int limit = 1000)
     {
-        return FacRecursion(startValue);
-    }
-
-    protected int FacRecursion(int value)
-    {
-        if (value < 0)
+        if (sent == 0)
         {
-            return 0;
+            return "No e-mails sent";
         }
-        if (value == 1 || value == 0)
+        if (sent > limit)
         {
-            return 1;
+            return "Daily limit is reached";
         }
-        return value*FacRecursion(value - 1);
+        return $"{sent * 100 / limit}%";
     }
 }
