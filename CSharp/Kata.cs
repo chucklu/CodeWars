@@ -1,18 +1,24 @@
-﻿/// <summary>
-/// https://www.codewars.com/kata/how-many-e-mails-we-sent-today/train/csharp
+﻿using System;
+
+/// <summary>
+/// https://www.codewars.com/kata/binary-operations-number-1/train/csharp
 /// </summary>
 public class Kata
 {
-    public static string CountEmails(int sent, int limit = 1000)
+    public static int FlipBit(int value, int bitIndex)
     {
-        if (sent == 0)
+        string str = Convert.ToString(value, 2).PadLeft(32, '0');
+        var array = str.ToCharArray();
+        int index = 32 - bitIndex;
+        if (array[index] == '0')
         {
-            return "No e-mails sent";
+            array[index] = '1';
         }
-        if (sent > limit)
+        else
         {
-            return "Daily limit is reached";
+            array[index] = '0';
         }
-        return $"{sent * 100 / limit}%";
+        str = string.Join(string.Empty, array);
+        return Convert.ToInt32(str, 2);
     }
 }
