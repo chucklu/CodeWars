@@ -7,12 +7,11 @@ public class KataTests
     [Test]
     public void BasicTests()
     {
-        var result = Kata.SquareAreaToCircle(20);
-        Assert.AreEqual(Math.Round(result, 8), Math.Round(15.707963267948969d, 8));
-
-        result = Kata.SquareAreaToCircle(9);
-        Assert.AreEqual(result.GetType(), typeof(double), "should a be double");
-        Assert.AreEqual(Math.Round(result, 8), Math.Round(7.0685834705770345d, 8));
+        Assert.AreEqual(new long[] { 0, 0, 0 }, Kata.NumbersWithDigitInside(5, 6));
+        Assert.AreEqual(new long[] { 1, 6, 6 }, Kata.NumbersWithDigitInside(7, 6));
+        Assert.AreEqual(new long[] { 3, 22, 110 }, Kata.NumbersWithDigitInside(11, 1));
+        Assert.AreEqual(new long[] { 2, 30, 200 }, Kata.NumbersWithDigitInside(20, 0));
+        Assert.AreEqual(new long[] { 9, 286, 5955146588160 }, Kata.NumbersWithDigitInside(44, 4));
     }
 }
 

@@ -1,12 +1,25 @@
-﻿using System;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 /// <summary>
-/// https://www.codewars.com/kata/circle-area-inside-square/train/csharp
+/// https://www.codewars.com/kata/numbers-with-this-digit-inside/train/csharp
 /// </summary>
 public class Kata
 {
-    public static double SquareAreaToCircle(double size)
+    public static long[] NumbersWithDigitInside(long x, long d)
     {
-        return Math.Round(Math.PI * size / 4.0, 8);
+        var list = new List<long>();
+        for (long i = 1; i <= x; i++)
+        {
+            if (i.ToString().Contains(d.ToString()))
+            {
+                list.Add(i);
+            }
+        }
+        if (list.Count == 0)
+        {
+            return new long[] {0, 0, 0};
+        }
+        return new[] {list.Count,list.Sum(),list.Aggregate(1L,(current,item)=>current*item)};
     }
 }
