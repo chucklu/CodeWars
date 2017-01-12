@@ -1,25 +1,31 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 
 /// <summary>
-/// https://www.codewars.com/kata/numbers-with-this-digit-inside/train/csharp
+/// https://www.codewars.com/kata/complementary-dna/train/csharp
 /// </summary>
-public class Kata
+public class DnaStrand
 {
-    public static long[] NumbersWithDigitInside(long x, long d)
+    public static string MakeComplement(string dna)
     {
-        var list = new List<long>();
-        for (long i = 1; i <= x; i++)
+        var list = new List<char>();
+        foreach (var item in dna)
         {
-            if (i.ToString().Contains(d.ToString()))
+            switch (item)
             {
-                list.Add(i);
+                case 'A':
+                    list.Add('T');
+                    break;
+                case 'T':
+                    list.Add('A');
+                    break;
+                case 'C':
+                    list.Add('G');
+                    break;
+                case 'G':
+                    list.Add('C');
+                    break;
             }
         }
-        if (list.Count == 0)
-        {
-            return new long[] {0, 0, 0};
-        }
-        return new[] {list.Count,list.Sum(),list.Aggregate(1L,(current,item)=>current*item)};
+        return string.Join(string.Empty, list);
     }
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 [TestFixture]
 public class KataTests
@@ -7,11 +6,9 @@ public class KataTests
     [Test]
     public void BasicTests()
     {
-        Assert.AreEqual(new long[] { 0, 0, 0 }, Kata.NumbersWithDigitInside(5, 6));
-        Assert.AreEqual(new long[] { 1, 6, 6 }, Kata.NumbersWithDigitInside(7, 6));
-        Assert.AreEqual(new long[] { 3, 22, 110 }, Kata.NumbersWithDigitInside(11, 1));
-        Assert.AreEqual(new long[] { 2, 30, 200 }, Kata.NumbersWithDigitInside(20, 0));
-        Assert.AreEqual(new long[] { 9, 286, 5955146588160 }, Kata.NumbersWithDigitInside(44, 4));
+        Assert.AreEqual("TTTT", DnaStrand.MakeComplement("AAAA"));
+        Assert.AreEqual("TAACG", DnaStrand.MakeComplement("ATTGC"));
+        Assert.AreEqual("CATA", DnaStrand.MakeComplement("GTAT"));
     }
 }
 
