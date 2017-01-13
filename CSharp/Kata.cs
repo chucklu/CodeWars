@@ -1,31 +1,26 @@
 ﻿using System.Collections.Generic;
 
 /// <summary>
-/// https://www.codewars.com/kata/complementary-dna/train/csharp
+/// https://www.codewars.com/kata/cartesian-neighbors/train/csharp
 /// </summary>
-public class DnaStrand
+public class Kata
 {
-    public static string MakeComplement(string dna)
+    public static IEnumerable<int[]> cartesianNeighbor(int x, int y)
     {
-        var list = new List<char>();
-        foreach (var item in dna)
+        var list = new List<int[]>();
+        for (int i = x - 1; i <= x + 1; i++)
         {
-            switch (item)
+            for (int j = y - 1; j <= y + 1; j++)
             {
-                case 'A':
-                    list.Add('T');
-                    break;
-                case 'T':
-                    list.Add('A');
-                    break;
-                case 'C':
-                    list.Add('G');
-                    break;
-                case 'G':
-                    list.Add('C');
-                    break;
+                if (i == x && j == y)
+                {
+                }
+                else
+                {
+                    list.Add(new[] { i, j });
+                }
             }
         }
-        return string.Join(string.Empty, list);
+        return list;
     }
 }
