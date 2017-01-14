@@ -1,26 +1,29 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Linq;
 
 /// <summary>
-/// https://www.codewars.com/kata/cartesian-neighbors/train/csharp
+/// https://www.codewars.com/kata/moves-in-squared-strings-i/train/csharp
 /// </summary>
-public class Kata
+public class Opstrings
 {
-    public static IEnumerable<int[]> cartesianNeighbor(int x, int y)
+    public static string VertMirror(string str)
     {
-        var list = new List<int[]>();
-        for (int i = x - 1; i <= x + 1; i++)
+        var array = str.Split('\n');
+        for (int i = 0; i < array.Length; i++)
         {
-            for (int j = y - 1; j <= y + 1; j++)
-            {
-                if (i == x && j == y)
-                {
-                }
-                else
-                {
-                    list.Add(new[] { i, j });
-                }
-            }
+            array[i] = string.Join(string.Empty, array[i].Reverse());
         }
-        return list;
+        return string.Join("\n", array);
+    }
+
+    public static string HorMirror(string str)
+    {
+        var array = str.Split('\n');
+        return string.Join("\n", array.Reverse());
+    }
+
+    public static string Oper(Func<string, string> fun, string str)
+    {
+        return fun(str);
     }
 }
