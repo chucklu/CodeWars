@@ -1,29 +1,26 @@
-﻿using System;
-using System.Linq;
-
-/// <summary>
-/// https://www.codewars.com/kata/moves-in-squared-strings-i/train/csharp
+﻿/// <summary>
+/// https://www.codewars.com/kata/mod-256-without-the-mod-operator/train/csharp
 /// </summary>
-public class Opstrings
+public class Kata
 {
-    public static string VertMirror(string str)
+    private static int mod = 256;
+
+    public static int Mod256WithoutMod(int number)
     {
-        var array = str.Split('\n');
-        for (int i = 0; i < array.Length; i++)
+        if (number > 0)
         {
-            array[i] = string.Join(string.Empty, array[i].Reverse());
+            while (number >= mod)
+            {
+                number = number - mod;
+            }
         }
-        return string.Join("\n", array);
-    }
-
-    public static string HorMirror(string str)
-    {
-        var array = str.Split('\n');
-        return string.Join("\n", array.Reverse());
-    }
-
-    public static string Oper(Func<string, string> fun, string str)
-    {
-        return fun(str);
+        else
+        {
+            while (number <= -mod)
+            {
+                number = number + mod;
+            }
+        }
+        return number;
     }
 }
