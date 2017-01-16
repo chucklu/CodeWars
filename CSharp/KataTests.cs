@@ -6,13 +6,13 @@ public class KataTests
     [Test]
     public void BasicTests()
     {
-        Assert.AreEqual(254, Kata.Mod256WithoutMod(254));
-        Assert.AreEqual(0, Kata.Mod256WithoutMod(256));
-        Assert.AreEqual(2, Kata.Mod256WithoutMod(258));
+        var input = new int[] { 3, 5, 2, 1 };
+        var expected = new object[] { new int[] { 3, 5, 2 }, 1 };
+        Assert.AreEqual(expected, Kata.Unflatten(input));
 
-        Assert.AreEqual(-254, Kata.Mod256WithoutMod(-254));
-        Assert.AreEqual(0, Kata.Mod256WithoutMod(-256));
-        Assert.AreEqual(-2, Kata.Mod256WithoutMod(-258));
+        input = new int[] { 1, 4, 5, 2, 1, 2, 4, 5, 2, 6, 2, 3, 3 };
+        expected = new object[] { 1, new int[] { 4, 5, 2, 1 }, 2, new int[] { 4, 5, 2, 6 }, 2, new int[] { 3, 3 } };
+        Assert.AreEqual(expected, Kata.Unflatten(input));
     }
 }
 

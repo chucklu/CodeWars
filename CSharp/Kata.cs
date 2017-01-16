@@ -1,26 +1,29 @@
-﻿/// <summary>
-/// https://www.codewars.com/kata/mod-256-without-the-mod-operator/train/csharp
+﻿using System.Collections.Generic;
+using System.Linq;
+
+/// <summary>
+/// https://www.codewars.com/kata/unflatten-a-list-easy/train/csharp
 /// </summary>
 public class Kata
 {
-    private static int mod = 256;
-
-    public static int Mod256WithoutMod(int number)
+    public static object[] Unflatten(int[] flatArray)
     {
-        if (number > 0)
+        var list = new List<object>();
+        while (flatArray.Length > 0)
         {
-            while (number >= mod)
+            var temp = flatArray[0];
+            if (temp >= 3)
             {
-                number = number - mod;
+                list.Add(flatArray.Take(temp).ToArray());
+                flatArray = flatArray.Skip(temp).ToArray();
+            }
+            else
+            {
+                list.Add(flatArray.Take(1).First());
+                flatArray = flatArray.Skip(1).ToArray();
             }
         }
-        else
-        {
-            while (number <= -mod)
-            {
-                number = number + mod;
-            }
-        }
-        return number;
+        return list.ToArray();
     }
 }
+
