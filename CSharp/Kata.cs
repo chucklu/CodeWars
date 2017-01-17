@@ -1,29 +1,13 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 
 /// <summary>
-/// https://www.codewars.com/kata/unflatten-a-list-easy/train/csharp
+/// https://www.codewars.com/kata/disemvowel-trolls/train/csharp
 /// </summary>
-public class Kata
+public static class Kata
 {
-    public static object[] Unflatten(int[] flatArray)
+    public static string Disemvowel(string str)
     {
-        var list = new List<object>();
-        while (flatArray.Length > 0)
-        {
-            var temp = flatArray[0];
-            if (temp >= 3)
-            {
-                list.Add(flatArray.Take(temp).ToArray());
-                flatArray = flatArray.Skip(temp).ToArray();
-            }
-            else
-            {
-                list.Add(flatArray.Take(1).First());
-                flatArray = flatArray.Skip(1).ToArray();
-            }
-        }
-        return list.ToArray();
+        return string.Join(string.Empty, str.Where(c => "aeiouAEIOU".IndexOf(c) == -1));
     }
 }
 
