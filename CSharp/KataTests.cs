@@ -6,7 +6,23 @@ public class KataTests
     [Test]
     public void BasicTests()
     {
-        Assert.AreEqual(Kata.Disemvowel("This website is for losers LOL!"),"Ths wbst s fr lsrs LL!");
+        var arrayOfArrays = new int[][] { new int[] { 1, 2, 3, 4, 5, 6 }, new int[] { 7, 7, 7, 7, 7, -7 } };
+        var expected = new int[] { 8, 9, 10, 11, 12, -1 };
+        var result = Kata.AddingShifted(arrayOfArrays, 0);
+        Assert.IsNotNull(result);
+        Assert.AreEqual(string.Join(",", expected), string.Join(",", result));
+
+        arrayOfArrays = new int[][] { new int[] { 1, 2, 3, 4, 5, 6 }, new int[] { 7, 7, 7, 7, 7, 7 } };
+        expected = new int[] { 1, 2, 3, 11, 12, 13, 7, 7, 7 };
+        result = Kata.AddingShifted(arrayOfArrays, 3);
+        Assert.IsNotNull(result);
+        Assert.AreEqual(string.Join(",", expected), string.Join(",", result));
+
+        arrayOfArrays = new int[][] { new int[] { 1, 2, 3, 4, 5, 6 }, new int[] { 7, 7, 7, -7, 7, 7 }, new int[] { 1, 1, 1, 1, 1, 1 } };
+        expected = new int[] { 1, 2, 3, 11, 12, 13, -6, 8, 8, 1, 1, 1 };
+        result = Kata.AddingShifted(arrayOfArrays, 3);
+        Assert.IsNotNull(result);
+        Assert.AreEqual(string.Join(",", expected), string.Join(",", result));
     }
 }
 
