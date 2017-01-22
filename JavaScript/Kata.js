@@ -1,4 +1,4 @@
-function numberToString(num)
+function removeExclamationMarks(s)
 {
-    return num.toString();
+    return s.replace(/!/g,'');
 }
