@@ -1,4 +1,4 @@
-function removeExclamationMarks(s)
+function getChar(c)
 {
-    return s.replace(/!/g,'');
+    return String.fromCharCode(c);
 }
