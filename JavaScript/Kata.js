@@ -1,4 +1,4 @@
-function getChar(c)
+function noSpace(x)
 {
-    return String.fromCharCode(c);
+    return x.replace(/ /g,'');
 }
