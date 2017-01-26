@@ -1,4 +1,4 @@
-function noSpace(x)
+function remove(s)
 {
-    return x.replace(/ /g,'');
+    return s.replace(/!/g,'')+'!';
 }
