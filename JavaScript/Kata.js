@@ -1,16 +1,4 @@
-function invert(array)
+function dutyFree(normPrice, discount, hol)
 {
-    var b = [];
-    for (var item in array)
-    {
-        if(array[item]!=0)
-        {
-            b.push(-array[item]);
-        }
-        else
-        {
-            b.push(0);
-        }
-    }
-    return b;
+    return Math.floor(hol/(normPrice*discount/100));
 }
