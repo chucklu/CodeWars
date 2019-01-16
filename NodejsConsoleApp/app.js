@@ -2,11 +2,13 @@
 
 console.log('start');
 
-https://www.codewars.com/kata/reversed-sequence/train/javascript
-const reverseSeq = n => {
-    var temp = [...Array(n + 1).keys()].reverse();
-    temp.pop();
-    return temp;
-};
+//https://www.codewars.com/kata/filter-out-the-geese/train/javascript
+function gooseFilter(birds) {
+    var geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+    birds = birds.filter(function (el) {
+        return geese.indexOf(el) < 0;
+    });
+    return birds;
+}
 
 console.log('end');
