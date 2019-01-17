@@ -2,11 +2,20 @@
 
 console.log('start');
 
-//https://www.codewars.com/kata/find-the-integral/train/javascript
-function integrate(coefficient, exponent) {
-    var n = exponent + 1;
-    var k = coefficient / n;
-    return `${k}x^${n}`;
+var result = sumMix([5]);
+console.log(result);
+
+//https://www.codewars.com/kata/sum-mixed-array/train/javascript
+function getSum(total, num) {
+    total = parseInt(total);
+    num = parseInt(num);
+    return total + num;
+}
+
+function sumMix(array) {
+    var total = array.reduce(getSum);
+    total = parseInt(total);
+    return total;
 }
 
 console.log('end');
