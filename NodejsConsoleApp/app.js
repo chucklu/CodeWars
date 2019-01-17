@@ -2,13 +2,11 @@
 
 console.log('start');
 
-//https://www.codewars.com/kata/filter-out-the-geese/train/javascript
-function gooseFilter(birds) {
-    var geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
-    birds = birds.filter(function (el) {
-        return geese.indexOf(el) < 0;
-    });
-    return birds;
+//https://www.codewars.com/kata/find-the-integral/train/javascript
+function integrate(coefficient, exponent) {
+    var n = exponent + 1;
+    var k = coefficient / n;
+    return `${k}x^${n}`;
 }
 
 console.log('end');
