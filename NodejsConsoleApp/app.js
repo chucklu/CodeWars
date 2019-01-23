@@ -2,12 +2,12 @@
 
 console.log('start');
 
-//https://www.codewars.com/kata/is-the-date-today/train/javascript
-function isToday(date) {
-    var today = new Date();
-    var date1 = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
-    var date2 = new Date(Date.UTC(today.getFullYear(), today.getMonth(), today.getDate()));
-    return date1.getTime() === date2.getTime();
+//https://www.codewars.com/kata/abbreviate-a-two-word-name/train/javascript
+function abbrevName(name) {
+    var array = name.split(' ');
+    var first = array[0].charAt(0).toUpperCase();
+    var last = array[1].charAt(0).toUpperCase();
+    return `${first}.${last}`;
 }
 
 console.log('end');
