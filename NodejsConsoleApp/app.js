@@ -2,9 +2,12 @@
 
 console.log('start');
 
-//https://www.codewars.com/kata/twice-as-old/train/javascript
-function twiceAsOld(dadYearsOld, sonYearsOld) {
-    return Math.abs(dadYearsOld - 2 * sonYearsOld);
+//https://www.codewars.com/kata/count-odd-numbers-below-n/train/javascript
+function oddCount(n) {
+    if (n % 2 === 0) {
+        n = n + 1;
+    }
+    return (n - 1) / 2;
 }
 
 console.log('end');
