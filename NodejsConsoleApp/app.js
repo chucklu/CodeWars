@@ -2,12 +2,14 @@
 
 console.log('start');
 
-//https://www.codewars.com/kata/count-odd-numbers-below-n/train/javascript
-function oddCount(n) {
-    if (n % 2 === 0) {
-        n = n + 1;
+//https://www.codewars.com/kata/is-this-my-tail/train/javascript
+function correctTail(body, tail) {
+    var sub = body.substr(body.length - tail.length);
+    if (sub === tail) {
+        return true;
+    } else {
+        return false;
     }
-    return (n - 1) / 2;
 }
 
 console.log('end');
