@@ -17,34 +17,47 @@
         }
 
         public int Damage { get; set; }
-        public int Armor { get; set; }
-    }
-
-    public class MarineWeaponUpgrade : IMarine
-    {
-        private IMarine marine;
-
-        public MarineWeaponUpgrade(IMarine marine)
-        {
-
-        }
-
-        public int Damage { get; set; }
 
         public int Armor { get; set; }
     }
 
-    public class MarineArmorUpgrade : IMarine
+    public class CustomUpgradeBase : IMarine
     {
-        private IMarine marine;
-
-        public MarineArmorUpgrade(IMarine marine)
+        public CustomUpgradeBase(IMarine marine)
         {
-
+            //shadow copy
+            Marine = new Marine(marine.Damage, marine.Armor);
         }
 
-        public int Damage { get; set; }
+        protected IMarine Marine;
 
-        public int Armor { get; set; }
+        public int Damage
+        {
+            get => Marine.Damage;
+            set => Marine.Damage = value;
+        }
+
+        public int Armor
+        {
+            get => Marine.Armor;
+            set => Marine.Armor = value;
+        }
+    }
+
+    public class MarineWeaponUpgrade : CustomUpgradeBase
+    {
+
+        public MarineWeaponUpgrade(IMarine marine) : base(marine)
+        {
+            Damage++;
+        }
+    }
+
+    public class MarineArmorUpgrade : CustomUpgradeBase
+    {
+        public MarineArmorUpgrade(IMarine marine) : base(marine)
+        {
+            Armor++;
+        }
     }
 }
