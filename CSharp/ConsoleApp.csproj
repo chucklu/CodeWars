@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DesignPatterns\Decorator.cs" />
     <Compile Include="Kata.cs" />
     <Compile Include="KataTests.cs" />
     <Compile Include="Program.cs" />
