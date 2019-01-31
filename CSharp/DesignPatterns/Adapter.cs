@@ -2,7 +2,7 @@
 
 namespace ConsoleApp.DesignPatterns.Adapter
 {
-    //
+    //https://www.codewars.com/kata/patterncraft-adapter/train/csharp
 
     public class Target
     {
