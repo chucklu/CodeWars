@@ -1,4 +1,4 @@
-﻿namespace ConsoleApp.DesignPatterns
+﻿namespace ConsoleApp.DesignPatterns.Decorator
 {
     //https://www.codewars.com/kata/patterncraft-decorator/train/csharp
 
