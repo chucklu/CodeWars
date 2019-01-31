@@ -48,14 +48,16 @@ namespace ConsoleApp.DesignPatterns.Adapter
 
     public class MarioAdapter : IUnit
     {
-        public MarioAdapter()
-        {
+        private Mario mario;
 
+        public MarioAdapter(Mario tempMario)
+        {
+            mario = tempMario;
         }
 
         public void Attack(Target target)
         {
-
+            target.Health -= mario.jumpAttack();
         }
     }
 }
