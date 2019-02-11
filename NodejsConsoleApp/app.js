@@ -2,33 +2,14 @@
 
 console.log('start');
 
-//https://www.codewars.com/kata/return-the-day/train/javascript
-function whatday(num) {
-    var result = 'Wrong, please enter a number between 1 and 7';
-    switch (num) {
-    case 1:
-        result = "Sunday";
-        break;
-    case 2:
-        result = "Monday";
-        break;
-    case 3:
-        result = "Tuesday";
-        break;
-    case 4:
-        result = "Wednesday";
-        break;
-    case 5:
-        result = "Thursday";
-        break;
-    case 6:
-        result = "Friday";
-        break;
-    case 7:
-        result = "Saturday";
-        break;
+//https://www.codewars.com/kata/will-there-be-enough-space/train/javascript
+function enough(cap, on, wait) {
+    var left = cap - on;
+    var out = wait - left;
+    if (out < 0) {
+        out = 0;
     }
-    return result;
+    return out;
 }
 
 console.log('end');
