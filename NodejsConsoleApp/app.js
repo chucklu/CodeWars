@@ -2,14 +2,9 @@
 
 console.log('start');
 
-//https://www.codewars.com/kata/will-there-be-enough-space/train/javascript
-function enough(cap, on, wait) {
-    var left = cap - on;
-    var out = wait - left;
-    if (out < 0) {
-        out = 0;
-    }
-    return out;
+//https://www.codewars.com/kata/super-duper-easy/train/javascript
+function problem(x) {
+    //your code here
 }
 
 console.log('end');
