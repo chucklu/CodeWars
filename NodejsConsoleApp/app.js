@@ -2,13 +2,11 @@
 
 console.log('start');
 
-//https://www.codewars.com/kata/who-is-going-to-pay-for-the-wall/train/javascript
-function whoIsPaying(name) {
-	if (name.length <= 2) {
-		return [name];
-	} else {
-		return [name, name.substring(0, 2)];
-	}
+//https://www.codewars.com/kata/thinkful-number-drills-blue-and-red-marbles/train/javascript
+function guessBlue(blueStart, redStart, bluePulled, redPulled) {
+	var a = blueStart - bluePulled;
+	var b = blueStart + redStart - bluePulled - redPulled;
+	return a / b;
 }
 
 console.log('end');
